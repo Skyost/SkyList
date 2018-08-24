@@ -28,7 +28,7 @@
     <string name="settings_app_theme_title">Thème de l\'application</string>
     <string name="settings_app_theme_summary">Ce paramètre vous permet de changer le thème de l\'application.</string>
 
-    <string name="settings_app_notification_title">Rappel de tâches</string>
+    <string name="settings_app_notification_title">Rappel de Tâches</string>
     <string name="settings_app_notification_summary">S\'il y a des tâches que vous devez accomplir, l\'application vous enverra une notification.</string>
 
     <string name="settings_list_order_warning_title">Attention !</string>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="main_classifier_colors">
+        <item>Roja</item>
+        <item>Rosa</item>
+        <item>Violeta</item>
+        <item>Violeta Oscuro</item>
+        <item>Añil</item>
+        <item>Azul</item>
+        <item>Azul Claro</item>
+        <item>Cian</item>
+        <item>Turquesa</item>
+        <item>Verde</item>
+        <item>Verde Claro</item>
+        <item>Limón</item>
+        <item>Jaune</item>
+        <item>Amarillo</item>
+        <item>Naranja</item>
+        <item>Naranja Oscuro</item>
+        <item>Castaño</item>
+        <item>Gris</item>
+        <item>Gris Azul</item>
+        <item>Blanco</item>
+    </array>
+
+    <string-array name="settings_list_order_entries">
+        <item>Fecha (Ascendente)</item>
+        <item>Fecha (Descendente)</item>
+        <item>Descripción (Ascendente)</item>
+        <item>Descripción (Descendente)</item>
+        <item>Color</item>
+    </string-array>
+
+    <string-array name="settings_theme_entries">
+        <item>Oscuro</item>
+        <item>Claro</item>
+        <item>Rosa</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+    </string-array>
+</resources>
