@@ -6,7 +6,7 @@
 
 ![Blank image](https://i.imgur.com/sHX9bHa.png)
 
-[![CircleCI status](https://img.shields.io/circleci/project/github/Skyost/SkyList.svg)](https://circleci.com/gh/Skyost/SkyList)
+[![CircleCI status](https://img.shields.io/circleci/project/github/Skyost/SkyList.svg?style=flat-square)](https://circleci.com/gh/Skyost/SkyList)
 [![License](https://img.shields.io/github/license/Skyost/SkyList.svg?style=flat-square)](https://github.com/Skyost/SkyList/blob/master/LICENSE.md)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/Skyost/SkyList.svg?style=flat-square)
 
