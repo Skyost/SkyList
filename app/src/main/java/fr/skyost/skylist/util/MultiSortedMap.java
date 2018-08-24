@@ -17,8 +17,6 @@ public class MultiSortedMap<K extends Comparable<K>, V extends Comparable<V>> {
 
 	/**
 	 * The map.
-	 *
-	 * TODO: Try with HashSet instead of TreeSet.
 	 */
 
 	private final TreeMap<K, Set<V>> map = new TreeMap<>();

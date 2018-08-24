@@ -23,7 +23,7 @@ public class DescendingAlphabeticalClassifier extends AlphabeticalClassifier {
 	 * @param letter The letter.
 	 */
 
-	private DescendingAlphabeticalClassifier(final String letter) {
+	private DescendingAlphabeticalClassifier(final char letter) {
 		super(letter);
 	}
 
@@ -38,19 +38,19 @@ public class DescendingAlphabeticalClassifier extends AlphabeticalClassifier {
 	public static AlphabeticalClassifier get(final TodoTask task) {
 		final String description = task.getDescription();
 		if(description.isEmpty()) {
-			return new DescendingAlphabeticalClassifier(null);
+			return new DescendingAlphabeticalClassifier(OTHER);
 		}
 
 		final char letter = description.charAt(0);
-		return new DescendingAlphabeticalClassifier(Character.isLetter(letter) ? String.valueOf(letter).toUpperCase() : null);
+		return new DescendingAlphabeticalClassifier(Character.isLetter(letter) ? Character.toUpperCase(letter) : OTHER);
 	}
 
 	@Override
 	public int compareTo(@NonNull final Classifier classifier) {
-		if(getLetter() != null && classifier instanceof AlphabeticalClassifier) {
-			return ((AlphabeticalClassifier)classifier).getLetter().compareTo(getLetter());
+		if(classifier instanceof AlphabeticalClassifier) {
+			return Character.compare(((AlphabeticalClassifier)classifier).getLetter(), getLetter());
 		}
-		return 1;
+		return -1;
 	}
 
 }

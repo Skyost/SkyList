@@ -7,16 +7,21 @@ import fr.skyost.skylist.task.adapter.classifier.Classifier;
 
 /**
  * A Classifier class that allows to sort tasks based on their first letter.
- * TODO: Test with a special character.
  */
 
 public abstract class AlphabeticalClassifier extends Classifier {
 
 	/**
+	 * The character when the description doesn't start with a proper letter.
+	 */
+
+	static final char OTHER = 'a';
+
+	/**
 	 * The letter.
 	 */
 
-	private final String letter;
+	private final char letter;
 
 	/**
 	 * Creates a new alphabetical classifier instance.
@@ -24,7 +29,7 @@ public abstract class AlphabeticalClassifier extends Classifier {
 	 * @param letter The letter.
 	 */
 
-	AlphabeticalClassifier(final String letter) {
+	AlphabeticalClassifier(final char letter) {
 		this.letter = letter;
 	}
 
@@ -34,13 +39,13 @@ public abstract class AlphabeticalClassifier extends Classifier {
 	 * @return The letter.
 	 */
 
-	public String getLetter() {
+	public char getLetter() {
 		return letter;
 	}
 
 	@Override
 	public String getDisplayString(final Resources resources) {
-		return letter == null ? resources.getString(R.string.main_classifier_character_others) : letter;
+		return letter == OTHER ? resources.getString(R.string.main_classifier_character_others) : String.valueOf(letter);
 	}
 
 }
