@@ -1,0 +1,48 @@
+<resources>
+    <string name="main_title">Tâches</string>
+
+    <string name="main_todo_task_default_description">Une Tâche</string>
+    <string name="main_todo_empty">Il n\'y a pas de tâche pour le moment</string>
+    <string name="main_todo_first">Ceci est une Tâche. Appuyez pour la modifier, maintenez pour la supprimer.</string>
+
+    <string name="main_classifier_daterange_upcoming">Bientôt</string>
+    <string name="main_classifier_daterange_tomorrow">Demain</string>
+    <string name="main_classifier_daterange_today">Aujourd\'hui</string>
+    <string name="main_classifier_daterange_yesterday">Hier</string>
+    <string name="main_classifier_daterange_past">Tâches Passées</string>
+
+    <string name="main_classifier_character_others">Autres</string>
+
+    <string name="main_dialog_edit_description">Décrivez votre tâche ici</string>
+
+    <string name="main_menu_add">Ajouter…</string>
+    <string name="menu_main_delete">Supprimer les tâches</string>
+    <string name="menu_main_settings">Paramètres…</string>
+
+    <string name="settings_title">Paramètres</string>
+
+    <string name="settings_category_app">Application</string>
+    <string name="settings_category_list">Liste des Tâches</string>
+    <string name="settings_category_about">À Propos</string>
+
+    <string name="settings_app_theme_title">Thème de l\'application</string>
+    <string name="settings_app_theme_summary">Ce paramètre vous permet de changer le thème de l\'application.</string>
+
+    <string name="settings_app_notification_title">Rappel de tâches</string>
+    <string name="settings_app_notification_summary">S\'il y a des tâches que vous devez accomplier, l\'application vous enverra une notification.</string>
+
+    <string name="settings_list_order_warning_title">Attention !</string>
+    <string name="settings_list_order_warning_message">Vous devez redémarrer l\'application pour voir les changements.</string>
+    <string name="settings_list_order_warning_button_neutral">Ne plus afficher</string>
+    <string name="settings_list_order_title">Ordre d\'affichage</string>
+    <string name="settings_list_order_summary">Choisissez l\'ordre dans lequel vous souhaitez afficher les tâches.</string>
+
+    <string name="settings_about_app_title">À Propos</string>
+    <string name="settings_about_app_summary">SkyList a été créé par Skyost. Si vous l\'aimez, veuillez ne pas oublier de laissez une bonne note sur Google Play !</string>
+
+    <string name="widget_empty">Vous n\'avez rien à faire aujourd\'hui.</string>
+
+    <string name="notification_channel">Rappel de Tâches</string>
+    <string name="notification_title">Tâches du jour</string>
+    <string name="notification_content">Vous avez %d tâche(s) à faire aujourd\'hui.</string>
+</resources>

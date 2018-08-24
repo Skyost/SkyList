@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="main_classifier_colors">
+        <item>Rouge</item>
+        <item>Rose</item>
+        <item>Violet</item>
+        <item>Violet Foncé</item>
+        <item>Indigo</item>
+        <item>Bleu</item>
+        <item>Bleu Clair</item>
+        <item>Cyan</item>
+        <item>Turquoise</item>
+        <item>Vert</item>
+        <item>Vert Clair</item>
+        <item>Citron</item>
+        <item>Jaune</item>
+        <item>Ambre</item>
+        <item>Orange</item>
+        <item>Orange Foncé</item>
+        <item>Marron</item>
+        <item>Gris</item>
+        <item>Gris-Bleu</item>
+        <item>Blanc</item>
+    </array>
+
+    <string-array name="settings_list_order_entries">
+        <item>Date (Croissant)</item>
+        <item>Date (Décroissant)</item>
+        <item>Description (Croissant)</item>
+        <item>Description (Décroissant)</item>
+        <item>Couleur</item>
+    </string-array>
+
+    <string-array name="settings_theme_entries">
+        <item>Sombre</item>
+        <item>Clair</item>
+        <item>Rose</item>
+        <item>Jaune</item>
+        <item>Vert</item>
+    </string-array>
+</resources>

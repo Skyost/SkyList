@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="todo_task_available_colors" translatable="false">
+        <item>#f44336</item>
+        <item>#e91e63</item>
+        <item>#9c27b0</item>
+        <item>#673ab7</item>
+        <item>#3f51b5</item>
+        <item>#2196f3</item>
+        <item>#03a9f4</item>
+        <item>#00bcd4</item>
+        <item>#009688</item>
+        <item>#4caf50</item>
+        <item>#8bc34a</item>
+        <item>#cddc39</item>
+        <item>#ffeb3b</item>
+        <item>#ffc107</item>
+        <item>#ff9800</item>
+        <item>#ff5722</item>
+        <item>#8d6e63</item>
+        <item>#9e9e9e</item>
+        <item>#607d8b</item>
+        <item>@android:color/white</item>
+    </array>
+
+    <array name="main_classifier_colors">
+        <item>Red</item>
+        <item>Pink</item>
+        <item>Purple</item>
+        <item>Deep Purple</item>
+        <item>Indigo</item>
+        <item>Blue</item>
+        <item>Light Blue</item>
+        <item>Cyan</item>
+        <item>Teal</item>
+        <item>Green</item>
+        <item>Light Green</item>
+        <item>Lime</item>
+        <item>Yellow</item>
+        <item>Amber</item>
+        <item>Orange</item>
+        <item>Deep Orange</item>
+        <item>Brown</item>
+        <item>Grey</item>
+        <item>Blue Grey</item>
+        <item>White</item>
+    </array>
+
+    <string-array name="settings_list_order_entries">
+        <item>Date (Ascending)</item>
+        <item>Date (Descending)</item>
+        <item>Description (Ascending)</item>
+        <item>Description (Descending)</item>
+        <item>Color</item>
+    </string-array>
+    <string-array name="settings_list_order_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="settings_theme_entries">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>Pink</item>
+        <item>Yellow</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="settings_theme_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>

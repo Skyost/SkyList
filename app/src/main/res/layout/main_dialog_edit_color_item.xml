@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/main_edit_color_item_padding_top"
+                android:paddingRight="@dimen/main_edit_color_item_padding_left"
+                android:paddingBottom="@dimen/main_edit_color_item_padding_top"
+                android:paddingLeft="@dimen/main_edit_color_item_padding_left"
+                android:gravity="start">
+
+    <fr.skyost.skylist.view.ColorCircleView
+        android:id="@+id/main_dialog_edit_color_circlecolor"
+        android:layout_width="@dimen/main_edit_color_item_colorcircle_size"
+        android:layout_height="@dimen/main_edit_color_item_colorcircle_size"
+        android:layout_marginRight="@dimen/main_edit_color_item_colorcircle_margin_right"
+        android:layout_marginEnd="@dimen/main_edit_color_item_colorcircle_margin_right"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/main_dialog_edit_color_name"/>
+
+    <TextView
+        android:id="@+id/main_dialog_edit_color_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/main_dialog_edit_color_circlecolor"
+        android:layout_toRightOf="@id/main_dialog_edit_color_circlecolor"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Base application theme -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorPrimaryDark">@color/dark_primary_dark</item>
+        <item name="colorAccent">@color/dark_accent</item>
+
+        <item name="android:textColor">@color/dark_text</item>
+        <item name="android:windowBackground">@color/dark_primary_dark</item>
+
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="fontFamily">sans-serif-light</item>
+
+        <item name="android:preferenceCategoryStyle">@style/AppPreferenceCategoryStyle</item>
+    </style>
+
+    <style name="AppPreferenceCategoryStyle" parent="Preference.Category">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Light Theme -->
+
+    <style name="AppTheme.Light" parent="AppTheme">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryDark">@color/light_primary_dark</item>
+        <item name="colorAccent">@color/light_accent</item>
+
+        <item name="android:textColor">@color/light_text</item>
+        <item name="android:windowBackground">@color/light_primary_dark</item>
+    </style>
+
+    <!-- Pink Theme -->
+
+    <style name="AppTheme.Pink" parent="AppTheme">
+        <item name="colorPrimary">@color/pink_primary</item>
+        <item name="colorPrimaryDark">@color/pink_primary_dark</item>
+        <item name="colorAccent">@color/pink_accent</item>
+
+        <item name="android:textColor">@color/pink_text</item>
+        <item name="android:windowBackground">@color/pink_primary_dark</item>
+    </style>
+
+    <!-- Yellow Theme -->
+
+    <style name="AppTheme.Yellow" parent="AppTheme">
+        <item name="colorPrimary">@color/yellow_primary</item>
+        <item name="colorPrimaryDark">@color/yellow_primary_dark</item>
+        <item name="colorAccent">@color/yellow_accent</item>
+
+        <item name="android:textColor">@color/yellow_text</item>
+        <item name="android:windowBackground">@color/yellow_primary_dark</item>
+    </style>
+
+    <!-- Green Theme -->
+
+    <style name="AppTheme.Green" parent="AppTheme">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/green_primary_dark</item>
+        <item name="colorAccent">@color/green_accent</item>
+
+        <item name="android:textColor">@color/green_text</item>
+        <item name="android:windowBackground">@color/green_primary_dark</item>
+    </style>
+
+</resources>
