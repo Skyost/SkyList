@@ -6,6 +6,7 @@
 
 ![Blank image](https://i.imgur.com/sHX9bHa.png)
 
+[![CircleCI status](https://img.shields.io/circleci/project/github/Skyost/SkyList.svg)](https://circleci.com/gh/Skyost/SkyList)
 [![License](https://img.shields.io/github/license/Skyost/SkyList.svg?style=flat-square)](https://github.com/Skyost/SkyList/blob/master/LICENSE.md)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/Skyost/SkyList.svg?style=flat-square)
 
@@ -35,7 +36,8 @@ SkyList is a small app but it has a lot of features ! Here is a non-exhaustive l
 
 ## Download
 
-You have two ways to download SkyList : either you download it on [Google Play](https://play.google.com/store/apps/details?id=fr.skyost.skylist&utm_source=Github) or you build from the source code.
+You have two ways to download SkyList : either you download it on [Google Play](https://play.google.com/store/apps/details?id=fr.skyost.skylist&utm_source=Github) or you build from the source code
+(if you don't want to build it by yourself, you can download a development build [here](https://circleci.com/gh/Skyost/SkyList); be warned : these builds can be unstable).
 
 ## Contributions
 
