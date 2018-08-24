@@ -17,9 +17,9 @@
 
     <string name="main_menu_add">Añadir…</string>
     <string name="menu_main_delete">Borrar las tareas</string>
-    <string name="menu_main_settings">Configuración…</string>
+    <string name="menu_main_settings">Ajustas…</string>
 
-    <string name="settings_title">Configuración</string>
+    <string name="settings_title">Ajustas</string>
 
     <string name="settings_category_app">Aplicación</string>
     <string name="settings_category_list">Lista de quehaceres</string>
