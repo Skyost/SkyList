@@ -32,6 +32,7 @@ SkyList is a small app but it has a lot of features ! Here is a non-exhaustive l
 * Notification support.
 * Nice UI.
 * Widget to display the tasks of the day.
+* No ad / in-app purchase / anything else.
 * A lot more !
 
 ## Download
