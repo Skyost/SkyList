@@ -2,32 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_todo_item_margin_top"
                 android:layout_marginBottom="@dimen/widget_todo_item_margin_top"
-                android:paddingTop="@dimen/widget_todo_item_padding_top"
-                android:paddingRight="@dimen/widget_todo_item_padding_left"
+                android:layout_marginTop="@dimen/widget_todo_item_margin_top"
+                android:background="@color/dark_primary"
                 android:paddingBottom="@dimen/widget_todo_item_padding_top"
                 android:paddingLeft="@dimen/widget_todo_item_padding_left"
-                android:background="@color/dark_primary">
+                android:paddingRight="@dimen/widget_todo_item_padding_left"
+                android:paddingTop="@dimen/widget_todo_item_padding_top">
 
     <TextView
         android:id="@+id/widget_todo_colorcircle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="@dimen/widget_todo_colorcircle_margin_right"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
         android:layout_marginEnd="@dimen/widget_todo_colorcircle_margin_right"
-        android:layout_centerInParent="true"/>
+        android:layout_marginRight="@dimen/widget_todo_colorcircle_margin_right"/>
 
     <TextView
         android:id="@+id/widget_todo_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/dark_todo_task_description"
         android:layout_centerInParent="true"
         android:layout_toEndOf="@id/widget_todo_colorcircle"
         android:layout_toRightOf="@id/widget_todo_colorcircle"
+        android:ellipsize="end"
         android:maxLines="3"
-        android:ellipsize="end"/>
+        android:textColor="@color/dark_todo_task_description"/>
+
 </RelativeLayout>

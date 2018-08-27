@@ -98,12 +98,7 @@ public class NotificationHandler extends BroadcastReceiver {
 
 		// And we schedule the PendingIntent at tomorrow midnight (+ 1 sec, "just to be sure").
 		final DateTime midnight = DateTime.now().withTimeAtStartOfDay().plusDays(1).plusSeconds(1);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			manager.setExact(AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
-		}
-		else {
-			manager.set(AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
-		}
+		manager.set(AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
 	}
 
 	/**

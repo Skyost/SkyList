@@ -11,9 +11,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/main_dialog_edit_description"
         android:inputType="textMultiLine"
-        android:minLines="1"
-        android:maxLines="3">
-        <requestFocus />
+        android:maxLines="3"
+        android:minLines="1">
+
+        <requestFocus/>
     </EditText>
 
     <Button
