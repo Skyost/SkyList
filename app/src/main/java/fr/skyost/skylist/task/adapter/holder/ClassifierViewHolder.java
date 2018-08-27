@@ -4,7 +4,6 @@ import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 
 import fr.skyost.skylist.activity.MainActivity;
-import fr.skyost.skylist.application.SkyListApplication;
 import fr.skyost.skylist.task.adapter.TodoListAdapterViewHolder;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
 
@@ -40,7 +39,7 @@ public class ClassifierViewHolder extends TodoListAdapterViewHolder<Classifier> 
 		this.itemView = itemView;
 
 		// We have to apply the theme on this view holder.
-		itemView.setTextColor(ContextCompat.getColor(activity, ((SkyListApplication)activity.getApplication()).getSkyListTheme().getClassifierColor()));
+		itemView.setTextColor(ContextCompat.getColor(activity, activity.getSkyListTheme().getClassifierColor()));
 	}
 
 	@Override

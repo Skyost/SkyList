@@ -14,27 +14,27 @@
 
     <!-- Light Theme -->
 
-    <color name="light_primary">#1565c0</color>
+    <color name="light_primary">#90caf9</color>
     <color name="light_primary_dark">#fafafa</color>
-    <color name="light_accent">#29b6f6</color>
+    <color name="light_accent">#82b1ff</color>
 
-    <color name="light_text">#1565c0</color>
+    <color name="light_text">#212121</color>
     <color name="light_classifier">#1e88e5</color>
-    <color name="light_todo_task_description">#e3f2fd</color>
-    <color name="light_todo_task_date">#90caf9</color>
-    <color name="light_todo_task_selected_background">#0d47a1</color>
+    <color name="light_todo_task_description">#f9fcff</color>
+    <color name="light_todo_task_date">#e3f2fd</color>
+    <color name="light_todo_task_selected_background">#64b5f6</color>
 
     <!-- Pink Theme -->
 
     <color name="pink_primary">#f48fb1</color>
     <color name="pink_primary_dark">#f46d9b</color>
-    <color name="pink_accent">#512da8</color>
+    <color name="pink_accent">#ffbdd3</color>
 
-    <color name="pink_text">#fce4ec</color>
+    <color name="pink_text">#fafafa</color>
     <color name="pink_classifier">#fce4ec</color>
-    <color name="pink_todo_task_description">#fce4ec</color>
-    <color name="pink_todo_task_date">#ffc6d9</color>
-    <color name="pink_todo_task_selected_background">#ad1457</color>
+    <color name="pink_todo_task_description">#fff6f9</color>
+    <color name="pink_todo_task_date">#fce4ec</color>
+    <color name="pink_todo_task_selected_background">#fab4cc</color>
 
     <!-- Yellow Theme -->
 
@@ -52,11 +52,11 @@
 
     <color name="green_primary">#4caf50</color>
     <color name="green_primary_dark">#43a047</color>
-    <color name="green_accent">#1b5e20</color>
+    <color name="green_accent">#e8f5e9</color>
 
-    <color name="green_text">#c8e6c9</color>
+    <color name="green_text">#fafafa</color>
     <color name="green_classifier">#e8f5e9</color>
-    <color name="green_todo_task_description">#c8e6c9</color>
-    <color name="green_todo_task_date">#a5d6a7</color>
+    <color name="green_todo_task_description">#d2e6d3</color>
+    <color name="green_todo_task_date">#b4d4b5</color>
     <color name="green_todo_task_selected_background">#66bb6a</color>
 </resources>

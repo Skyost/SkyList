@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.MainActivity;
-import fr.skyost.skylist.application.SkyListApplication;
 import fr.skyost.skylist.application.theme.SkyListTheme;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.TodoListAdapterViewHolder;
@@ -61,7 +60,7 @@ public class TodoTaskViewHolder extends TodoListAdapterViewHolder<TodoTask> {
 		super(itemView);
 
 		this.activity = activity;
-		this.theme = ((SkyListApplication)activity.getApplication()).getSkyListTheme();
+		this.theme = activity.getSkyListTheme();
 
 		// We have to apply the theme on this view holder.
 		colorCircle = itemView.findViewById(R.id.main_todo_colorcircle);

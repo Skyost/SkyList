@@ -1,7 +1,6 @@
 package fr.skyost.skylist.activity;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import fr.skyost.skylist.application.SkyListApplication;
@@ -15,12 +14,22 @@ public abstract class SkyListActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		// We apply the theme (and we have to ensure the correct background color has been applied because it does not work all the time).
-		final SkyListTheme theme = ((SkyListApplication)this.getApplication()).getSkyListTheme();
+		// We apply the theme.
+		final SkyListTheme theme = getSkyListTheme();
 		theme.apply(this);
-		getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(this, theme.getPrimaryColorDark()));
+
+		// We then can call onCreate(...).
+		super.onCreate(savedInstanceState);
+	}
+
+	/**
+	 * Returns the SkyList theme that is applied to this activity.
+	 *
+	 * @return The SkyList theme that is applied to this activity.
+	 */
+
+	public SkyListTheme getSkyListTheme() {
+		return ((SkyListApplication)this.getApplication()).getSkyListTheme();
 	}
 
 }

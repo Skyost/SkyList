@@ -146,6 +146,7 @@ public class MainActivity extends SkyListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);
+		getSkyListTheme().apply(this, menu);
 
 		// Those lines of code allow to toggle the items' visibility according to whether there are items in the selection or no.
 		final boolean isEmpty = selection == null || selection.size() == 0;

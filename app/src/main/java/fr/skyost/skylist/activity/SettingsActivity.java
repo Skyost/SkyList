@@ -3,11 +3,16 @@ package fr.skyost.skylist.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.content.res.AppCompatResources;
 import android.view.MenuItem;
 
 import com.kobakei.ratethisapp.RateThisApp;
@@ -33,6 +38,19 @@ public class SettingsActivity extends SkyListActivity {
 
 		// We only have one fragment, so let's display it !
 		getFragmentManager().beginTransaction().replace(android.R.id.content, new AppPreferencesFragment()).commit();
+
+		// It's time to change the home icon drawable.
+		final ActionBar actionBar = getSupportActionBar();
+		final Drawable up = AppCompatResources.getDrawable(this, R.drawable.settings_menu_home);
+		if(actionBar == null || up == null) {
+			return;
+		}
+
+		final int color = getSkyListTheme().getMenuIconsColor();
+		if(color != -1) {
+			up.setColorFilter(ContextCompat.getColor(this, color), PorterDuff.Mode.SRC_ATOP);
+		}
+		actionBar.setHomeAsUpIndicator(up);
 	}
 
 	@Override

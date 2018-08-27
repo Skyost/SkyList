@@ -38,6 +38,11 @@ public class YellowTheme extends SkyListTheme {
 	}
 
 	@Override
+	public int getMenuIconsColor() {
+		return R.color.yellow_text;
+	}
+
+	@Override
 	public int getClassifierColor() {
 		return R.color.yellow_classifier;
 	}
@@ -56,7 +61,6 @@ public class YellowTheme extends SkyListTheme {
 	public int getTodoTaskSelectedBackgroundColor() {
 		return R.color.yellow_todo_task_selected_background;
 	}
-
 
 	@Override
 	public boolean useNightMode() {
