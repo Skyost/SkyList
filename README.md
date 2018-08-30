@@ -30,7 +30,7 @@ SkyList is a small app but it has a lot of features ! Here is a non-exhaustive l
 * Free and open-source.
 * Themeable.
 * Notification support.
-* Nice UI.
+* Nice UI (inspired by the Androstock's one).
 * Widget to display the tasks of the day.
 * No ad / in-app purchase / anything else.
 * A lot more !
