@@ -10,15 +10,31 @@
         <item name="android:textColor">@color/dark_text</item>
         <item name="android:windowBackground">@color/dark_primary_dark</item>
 
-        <item name="android:fontFamily">sans-serif-light</item>
-        <item name="fontFamily">sans-serif-light</item>
+        <item name="buttonStyle">@style/AppTheme.Button</item>
+        <item name="editTextStyle">@style/AppTheme.EditText</item>
+        <item name="android:textViewStyle">@style/AppTheme.TextView</item>
 
-        <item name="android:preferenceCategoryStyle">@style/AppPreferenceCategoryStyle</item>
+        <item name="android:preferenceCategoryStyle">@style/AppTheme.PreferenceCategory</item>
     </style>
 
-    <style name="AppPreferenceCategoryStyle" parent="Preference.Category">
+    <style name="AppTheme.PreferenceCategory" parent="Preference.Category">
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="AppTheme.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="AppTheme.TextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="fontFamily">sans-serif-light</item>
     </style>
 
     <!-- Light Theme -->
