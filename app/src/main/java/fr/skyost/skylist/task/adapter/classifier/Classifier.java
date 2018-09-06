@@ -8,8 +8,10 @@ import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
 import fr.skyost.skylist.task.adapter.classifier.alphabetical.AscendingAlphabeticalClassifier;
 import fr.skyost.skylist.task.adapter.classifier.alphabetical.DescendingAlphabeticalClassifier;
-import fr.skyost.skylist.task.adapter.classifier.date.AscendingDateRangeClassifier;
-import fr.skyost.skylist.task.adapter.classifier.date.DescendingDateRangeClassifier;
+import fr.skyost.skylist.task.adapter.classifier.date.AscendingDateClassifier;
+import fr.skyost.skylist.task.adapter.classifier.date.DescendingDateClassifier;
+import fr.skyost.skylist.task.adapter.classifier.period.AscendingPeriodClassifier;
+import fr.skyost.skylist.task.adapter.classifier.period.DescendingPeriodClassifier;
 import fr.skyost.skylist.util.Function;
 
 /**
@@ -49,9 +51,13 @@ public abstract class Classifier implements TodoListAdapterItem, Comparable<Clas
 
 	public static Function<TodoTask, Classifier> getClassifierFunction(final Context context) {
 		// We switch over the preference value and we return corresponding function.
-		switch(context.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getString("list_order", DescendingDateRangeClassifier.PREFERENCE_VALUE)) {
-		case AscendingDateRangeClassifier.PREFERENCE_VALUE:
-			return AscendingDateRangeClassifier::get;
+		switch(context.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getString("list_order", DescendingPeriodClassifier.PREFERENCE_VALUE)) {
+		case AscendingPeriodClassifier.PREFERENCE_VALUE:
+			return AscendingPeriodClassifier::get;
+		case AscendingDateClassifier.PREFERENCE_VALUE:
+			return AscendingDateClassifier::get;
+		case DescendingDateClassifier.PREFERENCE_VALUE:
+			return DescendingDateClassifier::get;
 		case AscendingAlphabeticalClassifier.PREFERENCE_VALUE:
 			return AscendingAlphabeticalClassifier::get;
 		case DescendingAlphabeticalClassifier.PREFERENCE_VALUE:
@@ -60,7 +66,7 @@ public abstract class Classifier implements TodoListAdapterItem, Comparable<Clas
 			ColorClassifier.init(context.getResources());
 			return ColorClassifier::get;
 		default:
-			return DescendingDateRangeClassifier::get;
+			return DescendingPeriodClassifier::get;
 		}
 	}
 

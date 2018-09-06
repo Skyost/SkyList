@@ -47,6 +47,8 @@
     </array>
 
     <string-array name="settings_list_order_entries">
+        <item>Period (Ascending)</item>
+        <item>Period (Descending)</item>
         <item>Date (Ascending)</item>
         <item>Date (Descending)</item>
         <item>Description (Ascending)</item>
@@ -56,6 +58,8 @@
     <string-array name="settings_list_order_values" translatable="false">
         <item>0</item>
         <item>1</item>
+        <item>5</item>
+        <item>6</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>

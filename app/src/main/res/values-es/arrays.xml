@@ -24,6 +24,8 @@
     </array>
 
     <string-array name="settings_list_order_entries">
+        <item>Período (Ascendente)</item>
+        <item>Período (Descendente)</item>
         <item>Fecha (Ascendente)</item>
         <item>Fecha (Descendente)</item>
         <item>Descripción (Ascendente)</item>

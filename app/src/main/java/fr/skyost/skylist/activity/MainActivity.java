@@ -306,16 +306,19 @@ public class MainActivity extends SkyListActivity {
 		protected void onPostExecute(final List<TodoListAdapterItem> result) {
 			super.onPostExecute(result);
 
+			// We get a reference to the required objects.
 			final MainActivity activity = getAdapter().getActivity();
 			final RecyclerView todoRecyclerView = activity.findViewById(R.id.main_todo);
 			final TodoListAdapter adapter = (TodoListAdapter)todoRecyclerView.getAdapter();
 			final Intent intent = activity.getIntent();
 
+			// If there is a selection, we restore it.
 			if(intent.hasExtra(BUNDLE_SELECTED)) {
 				activity.getSelection().addFromAdapter(adapter, (Integer[])intent.getSerializableExtra(BUNDLE_SELECTED));
 				intent.removeExtra(BUNDLE_SELECTED);
 			}
 
+			// And if there is LayoutManager state, we also restore it.
 			if(intent.hasExtra(BUNDLE_LAYOUT_MANAGER_STATE)) {
 				todoRecyclerView.getLayoutManager().onRestoreInstanceState(intent.getParcelableExtra(BUNDLE_LAYOUT_MANAGER_STATE));
 				intent.removeExtra(BUNDLE_LAYOUT_MANAGER_STATE);
