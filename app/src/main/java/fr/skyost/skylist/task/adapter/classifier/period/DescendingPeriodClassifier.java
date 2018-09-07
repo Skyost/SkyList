@@ -8,6 +8,7 @@ import org.joda.time.LocalDate;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
+import fr.skyost.skylist.task.adapter.classifier.date.DateClassifier;
 
 /**
  * The descending period classifier.
@@ -25,31 +26,31 @@ public class DescendingPeriodClassifier extends PeriodClassifier {
 	 * Upcoming Classifier.
 	 */
 
-	public static final DescendingPeriodClassifier UPCOMING = new DescendingPeriodClassifier(R.string.main_classifier_daterange_upcoming, LocalDate.now().plusDays(2));
+	public static final DescendingPeriodClassifier UPCOMING = new DescendingPeriodClassifier(R.string.main_classifier_dateRange_upcoming, LocalDate.now().plusDays(2));
 
 	/**
 	 * Tomorrow Classifier.
 	 */
 
-	public static final DescendingPeriodClassifier TOMORROW = new DescendingPeriodClassifier(R.string.main_classifier_daterange_tomorrow, LocalDate.now().plusDays(1));
+	public static final DescendingPeriodClassifier TOMORROW = new DescendingPeriodClassifier(R.string.main_classifier_dateRange_tomorrow, LocalDate.now().plusDays(1));
 
 	/**
 	 * Today Classifier.
 	 */
 
-	public static final DescendingPeriodClassifier TODAY = new DescendingPeriodClassifier(R.string.main_classifier_daterange_today, LocalDate.now());
+	public static final DescendingPeriodClassifier TODAY = new DescendingPeriodClassifier(R.string.main_classifier_dateRange_today, LocalDate.now());
 
 	/**
 	 * Yesterday Classifier.
 	 */
 
-	public static final DescendingPeriodClassifier YESTERDAY = new DescendingPeriodClassifier(R.string.main_classifier_daterange_yesterday, LocalDate.now().minusDays(1));
+	public static final DescendingPeriodClassifier YESTERDAY = new DescendingPeriodClassifier(R.string.main_classifier_dateRange_yesterday, LocalDate.now().minusDays(1));
 
 	/**
 	 * Past Classifier.
 	 */
 
-	public static final DescendingPeriodClassifier PAST = new DescendingPeriodClassifier(R.string.main_classifier_daterange_past, LocalDate.now().minusDays(2));
+	public static final DescendingPeriodClassifier PAST = new DescendingPeriodClassifier(R.string.main_classifier_dateRange_past, LocalDate.now().minusDays(2));
 
 	/**
 	 * Creates a new descending period classifier instance.
@@ -101,14 +102,14 @@ public class DescendingPeriodClassifier extends PeriodClassifier {
 	 * @return The Classifier that corresponds to the current date.
 	 */
 
-	public DescendingPeriodClassifier getTodayClassifier() {
+	public static DescendingPeriodClassifier getTodayClassifier() {
 		return TODAY;
 	}
 
 	@Override
 	public int compareTo(@NonNull final Classifier classifier) {
-		if(classifier instanceof PeriodClassifier) {
-			return ((PeriodClassifier)classifier).getDate().compareTo(getDate());
+		if(classifier instanceof DateClassifier) {
+			return ((DateClassifier)classifier).getDate().compareTo(getDate());
 		}
 		return -1;
 	}

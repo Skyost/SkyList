@@ -40,8 +40,6 @@ public class NotificationDisplayer extends AsyncTask<SkyListDatabase, Void, Coll
 
 	@Override
 	protected void onPostExecute(final Collection<TodoTask> tasks) {
-		super.onPostExecute(tasks);
-
 		// We check if there are tasks today and if the Context is still present.
 		final Context context = this.context.get();
 		if(context == null || tasks.isEmpty()) {

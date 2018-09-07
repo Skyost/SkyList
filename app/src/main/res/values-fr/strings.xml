@@ -5,11 +5,11 @@
     <string name="main_todo_empty">Il n\'y a pas de tâche pour le moment</string>
     <string name="main_todo_first">Ceci est une Tâche. Appuyez pour la modifier, maintenez pour la supprimer.</string>
 
-    <string name="main_classifier_daterange_upcoming">Bientôt</string>
-    <string name="main_classifier_daterange_tomorrow">Demain</string>
-    <string name="main_classifier_daterange_today">Aujourd\'hui</string>
-    <string name="main_classifier_daterange_yesterday">Hier</string>
-    <string name="main_classifier_daterange_past">Tâches Passées</string>
+    <string name="main_classifier_dateRange_upcoming">Bientôt</string>
+    <string name="main_classifier_dateRange_tomorrow">Demain</string>
+    <string name="main_classifier_dateRange_today">Aujourd\'hui</string>
+    <string name="main_classifier_dateRange_yesterday">Hier</string>
+    <string name="main_classifier_dateRange_past">Tâches Passées</string>
 
     <string name="main_classifier_character_others">Autres</string>
 
@@ -36,6 +36,8 @@
     <string name="settings_list_order_warning_button_neutral">Ne plus afficher</string>
     <string name="settings_list_order_title">Ordre d\'affichage</string>
     <string name="settings_list_order_summary">Choisissez l\'ordre dans lequel vous souhaitez afficher les tâches.</string>
+    <string name="settings_list_scrollToToday_title">Aller à aujourd\'hui</string>
+    <string name="settings_list_scrollToToday_summary">Accéder automatiquement aux tâches du jour à l\'ouverture.</string>
 
     <string name="settings_about_app_title">À Propos</string>
     <string name="settings_about_app_summary">SkyList a été créé par Skyost. Si vous l\'aimez, veuillez ne pas oublier de laisser une bonne note sur Google Play !</string>

@@ -7,11 +7,11 @@
     <string name="main_todo_empty">There is no task for the moment</string>
     <string name="main_todo_first">This is a Task. Edit with a simple press or delete it with a long press.</string>
 
-    <string name="main_classifier_daterange_upcoming">Upcoming</string>
-    <string name="main_classifier_daterange_tomorrow">Tomorrow</string>
-    <string name="main_classifier_daterange_today">Today</string>
-    <string name="main_classifier_daterange_yesterday">Yesterday</string>
-    <string name="main_classifier_daterange_past">Past Tasks</string>
+    <string name="main_classifier_dateRange_upcoming">Upcoming</string>
+    <string name="main_classifier_dateRange_tomorrow">Tomorrow</string>
+    <string name="main_classifier_dateRange_today">Today</string>
+    <string name="main_classifier_dateRange_yesterday">Yesterday</string>
+    <string name="main_classifier_dateRange_past">Past Tasks</string>
 
     <string name="main_classifier_character_others">Others</string>
 
@@ -38,6 +38,8 @@
     <string name="settings_list_order_warning_button_neutral">Do not show again</string>
     <string name="settings_list_order_title">Display order</string>
     <string name="settings_list_order_summary">Select the order in which you want to display your tasks.</string>
+    <string name="settings_list_scrollToToday_title">Scroll to today</string>
+    <string name="settings_list_scrollToToday_summary">Automatically scroll to today\'s tasks when opening the application.</string>
 
     <string name="settings_about_app_title">About</string>
     <string name="settings_about_app_summary">SkyList has been created by Skyost. If you enjoy it, please do not forget to leave a good rating on Google Play !</string>

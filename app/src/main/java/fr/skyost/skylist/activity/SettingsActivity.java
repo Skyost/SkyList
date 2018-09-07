@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
@@ -19,6 +20,10 @@ import com.kobakei.ratethisapp.RateThisApp;
 
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.notification.NotificationHandler;
+import fr.skyost.skylist.task.adapter.classifier.date.AscendingDateClassifier;
+import fr.skyost.skylist.task.adapter.classifier.date.DescendingDateClassifier;
+import fr.skyost.skylist.task.adapter.classifier.period.AscendingPeriodClassifier;
+import fr.skyost.skylist.task.adapter.classifier.period.DescendingPeriodClassifier;
 
 /**
  * The activity that allows to configure the application.
@@ -88,13 +93,48 @@ public class SettingsActivity extends SkyListActivity {
 				return true;
 			});
 
-			findPreference("list_order").setOnPreferenceChangeListener((preference, newValue) -> openRestartApplicationDialogIfNeeded("show_list_order_dialog"));
+			findPreference("list_order").setOnPreferenceChangeListener((preference, newValue) -> {
+				toggleScrollToTodayPreference(newValue);
+				return openRestartApplicationDialogIfNeeded("show_list_order_dialog");
+			});
 			findPreference("about_app").setOnPreferenceClickListener(preference -> {
 				RateThisApp.showRateDialog(getActivity());
 				return true;
 			});
 			findPreference("about_skyost").setOnPreferenceClickListener((this::openDescriptionInBrowser));
 			findPreference("about_github").setOnPreferenceClickListener((this::openDescriptionInBrowser));
+		}
+
+		/**
+		 * Toggles the "scroll to today" preference according to the provided new value.
+		 *
+		 * @param newValue The new value.
+		 */
+
+		private void toggleScrollToTodayPreference(final Object newValue) {
+			// We put the category and its preference into a variable.
+			final PreferenceCategory category = (PreferenceCategory)findPreference("settings_category_list");
+			final Preference scrollToToday = findPreference("list_scrollToToday");
+
+			// We check if the user has enabled a date classifier.
+			if(newValue.equals(AscendingPeriodClassifier.PREFERENCE_VALUE) || newValue.equals(DescendingPeriodClassifier.PREFERENCE_VALUE) || newValue.equals(AscendingDateClassifier.PREFERENCE_VALUE) || newValue.equals(DescendingDateClassifier.PREFERENCE_VALUE)) {
+				// If there are already two preferences in the category then it's all good !
+				if(category.getPreferenceCount() == 2) {
+					return;
+				}
+
+				// Otherwise we can add our preference.
+				category.addPreference(scrollToToday);
+				return;
+			}
+
+			// Same here if there is only one preference, we can stop.
+			if(category.getPreferenceCount() == 1) {
+				return;
+			}
+
+			// Otherwise we have to remove our preference.
+			category.removePreference(scrollToToday);
 		}
 
 		/**

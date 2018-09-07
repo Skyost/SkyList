@@ -72,8 +72,6 @@ public class RefreshTodoListAdapterTask extends AsyncTask<Collection<TodoTask>, 
 
 	@Override
 	protected void onPostExecute(final List<TodoListAdapterItem> result) {
-		super.onPostExecute(result);
-
 		// We update the items and notify the adapter.
 		adapter.setItems(result);
 		adapter.notifyDataSetChanged();

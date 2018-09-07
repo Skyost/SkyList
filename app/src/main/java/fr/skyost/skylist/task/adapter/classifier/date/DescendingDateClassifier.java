@@ -6,7 +6,6 @@ import org.joda.time.LocalDate;
 
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
-import fr.skyost.skylist.task.adapter.classifier.period.PeriodClassifier;
 
 /**
  * The descending date classifier.
@@ -56,8 +55,8 @@ public class DescendingDateClassifier extends DateClassifier {
 	public int compareTo(
 			@NonNull
 			final Classifier classifier) {
-		if(classifier instanceof PeriodClassifier) {
-			return ((PeriodClassifier)classifier).getDate().compareTo(getDate());
+		if(classifier instanceof DateClassifier) {
+			return ((DateClassifier)classifier).getDate().compareTo(getDate());
 		}
 		return -1;
 	}

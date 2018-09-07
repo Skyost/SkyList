@@ -41,6 +41,15 @@ public abstract class Classifier implements TodoListAdapterItem, Comparable<Clas
 		return ADAPTER_ITEM_TYPE;
 	}
 
+	@Override
+	public boolean equals(final Object object) {
+		if(object instanceof Classifier) {
+			return compareTo((Classifier)object) == 0;
+		}
+
+		return super.equals(object);
+	}
+
 	/**
 	 * Returns the function that allows to get the Classifier that corresponds to a given task (based on SharedPreferences).
 	 *

@@ -19,7 +19,9 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/settings_category_list">
+    <PreferenceCategory
+        android:title="@string/settings_category_list"
+        android:key="settings_category_list">
 
         <ListPreference
             android:key="list_order"
@@ -28,6 +30,12 @@
             android:entries="@array/settings_list_order_entries"
             android:entryValues="@array/settings_list_order_values"
             android:defaultValue="1"/>
+
+        <CheckBoxPreference
+            android:key="list_scrollToToday"
+            android:summary="@string/settings_list_scrollToToday_summary"
+            android:title="@string/settings_list_scrollToToday_title"
+            android:defaultValue="true"/>
 
     </PreferenceCategory>
 

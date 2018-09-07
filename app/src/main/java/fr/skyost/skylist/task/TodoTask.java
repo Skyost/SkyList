@@ -213,4 +213,13 @@ public class TodoTask implements TodoListAdapterItem, Comparable<TodoTask> {
 		return Long.compare(id, task.id);
 	}
 
+	@Override
+	public boolean equals(final Object object) {
+		if(object instanceof TodoTask) {
+			return compareTo((TodoTask)object) == 0;
+		}
+
+		return super.equals(object);
+	}
+
 }

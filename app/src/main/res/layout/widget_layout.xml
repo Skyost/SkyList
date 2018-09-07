@@ -21,7 +21,7 @@
         android:paddingLeft="@dimen/widget_title_padding_left"
         android:paddingRight="@dimen/widget_title_padding_left"
         android:paddingTop="@dimen/widget_title_padding_top"
-        android:text="@string/main_classifier_daterange_today"
+        android:text="@string/main_classifier_dateRange_today"
         android:textAllCaps="true"
         android:textSize="@dimen/widget_title"/>
 

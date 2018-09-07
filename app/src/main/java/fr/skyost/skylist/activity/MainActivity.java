@@ -2,6 +2,7 @@ package fr.skyost.skylist.activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import fr.skyost.skylist.task.adapter.RefreshTodoListAdapterTask;
 import fr.skyost.skylist.task.adapter.Selection;
 import fr.skyost.skylist.task.adapter.TodoListAdapter;
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
+import fr.skyost.skylist.task.adapter.classifier.date.DateClassifier;
 import fr.skyost.skylist.widget.TriggerWidgetUpdate;
 
 /**
@@ -322,6 +324,25 @@ public class MainActivity extends SkyListActivity {
 			if(intent.hasExtra(BUNDLE_LAYOUT_MANAGER_STATE)) {
 				todoRecyclerView.getLayoutManager().onRestoreInstanceState(intent.getParcelableExtra(BUNDLE_LAYOUT_MANAGER_STATE));
 				intent.removeExtra(BUNDLE_LAYOUT_MANAGER_STATE);
+				return;
+			}
+
+			// Checks whether we should scroll to today.
+			final boolean scrollToToday = activity.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getBoolean("list_scrollToToday", true);
+			if(!scrollToToday) {
+				return;
+			}
+
+			// If everything is ok we get the date classifier.
+			final DateClassifier dateClassifier = DateClassifier.getTodayClassifier(activity);
+			if(dateClassifier == null) {
+				return;
+			}
+
+			// And we scroll to the position.
+			final int position = result.indexOf(dateClassifier);
+			if(position != -1) {
+				todoRecyclerView.getLayoutManager().scrollToPosition(position);
 			}
 		}
 
