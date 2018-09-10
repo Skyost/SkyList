@@ -38,6 +38,11 @@ public class LightTheme extends SkyListTheme {
 	}
 
 	@Override
+	public int getMenuIconsColor() {
+		return R.color.light_text;
+	}
+
+	@Override
 	public int getClassifierColor() {
 		return R.color.light_classifier;
 	}

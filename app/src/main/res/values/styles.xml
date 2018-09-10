@@ -46,6 +46,8 @@
 
         <item name="android:textColor">@color/light_text</item>
         <item name="android:windowBackground">@color/light_primary_dark</item>
+
+        <item name="titleTextColor">@color/light_text</item>
     </style>
 
     <!-- Pink Theme -->

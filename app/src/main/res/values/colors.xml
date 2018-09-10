@@ -14,15 +14,15 @@
 
     <!-- Light Theme -->
 
-    <color name="light_primary">#90caf9</color>
+    <color name="light_primary">#eaeaea</color>
     <color name="light_primary_dark">#fafafa</color>
     <color name="light_accent">#82b1ff</color>
 
     <color name="light_text">#212121</color>
-    <color name="light_classifier">#1e88e5</color>
-    <color name="light_todo_task_description">#f9fcff</color>
-    <color name="light_todo_task_date">#e3f2fd</color>
-    <color name="light_todo_task_selected_background">#64b5f6</color>
+    <color name="light_classifier">#212121</color>
+    <color name="light_todo_task_description">#263238</color>
+    <color name="light_todo_task_date">#455a64</color>
+    <color name="light_todo_task_selected_background">#d9d9d9</color>
 
     <!-- Pink Theme -->
 
