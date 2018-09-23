@@ -17,6 +17,7 @@ import android.view.View;
 
 import com.kobakei.ratethisapp.RateThisApp;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -209,14 +210,10 @@ public class MainActivity extends SkyListActivity {
 
 		// We restore the changes.
 		new RestoreRefreshTodoListAdapterTask(adapter).execute(tasks);
-
-		// And we make the required changes to views visibility.
-		findViewById(R.id.main_todo_loading).setVisibility(View.GONE);
 		refreshTodoListState(tasks);
 
 		// If we've started the activity through a shortcut, we open the edit dialog.
 		final String action = getIntent().getAction();
-		System.out.println(action);
 		if(action != null && action.equals(Intent.ACTION_INSERT)) {
 			showAddTaskDialog();
 		}
@@ -312,6 +309,12 @@ public class MainActivity extends SkyListActivity {
 	private static class RestoreRefreshTodoListAdapterTask extends RefreshTodoListAdapterTask {
 
 		/**
+		 * We have to store the calculated position (if we want to use it in onPostExecute).
+		 */
+
+		private int scrollToPosition = -1;
+
+		/**
 		 * Creates a new task instance.
 		 *
 		 * @param adapter The To-do list adapter.
@@ -319,6 +322,37 @@ public class MainActivity extends SkyListActivity {
 
 		private RestoreRefreshTodoListAdapterTask(final TodoListAdapter adapter) {
 			super(adapter);
+		}
+
+		@SafeVarargs
+		@Override
+		protected final List<TodoListAdapterItem> doInBackground(final Collection<TodoTask>... collections) {
+			final List<TodoListAdapterItem> result = super.doInBackground(collections);
+
+			// We get a reference to the required objects.
+			final MainActivity activity = getAdapter().getActivity();
+			final Intent intent = activity.getIntent();
+
+			// If there is LayoutManager state, we can exit.
+			if(intent.hasExtra(BUNDLE_LAYOUT_MANAGER_STATE)) {
+				return result;
+			}
+
+			// Checks whether we should scroll to today.
+			final boolean scrollToToday = activity.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getBoolean("list_scrollToToday", true);
+			if(!scrollToToday) {
+				return result;
+			}
+
+			// If everything is ok we get the date classifier.
+			final DateClassifier dateClassifier = DateClassifier.getTodayClassifier(activity);
+			if(dateClassifier == null) {
+				return result;
+			}
+
+			// And we calculate the scroll position.
+			scrollToPosition = Utils.getClosestElementPosition(dateClassifier, result);
+			return result;
 		}
 
 		@Override
@@ -330,6 +364,9 @@ public class MainActivity extends SkyListActivity {
 			final RecyclerView todoRecyclerView = activity.findViewById(R.id.main_todo);
 			final TodoListAdapter adapter = (TodoListAdapter)todoRecyclerView.getAdapter();
 			final Intent intent = activity.getIntent();
+
+			// And we make the required changes to views visibility.
+			activity.findViewById(R.id.main_todo_loading).setVisibility(View.GONE);
 
 			// If there is a selection, we restore it.
 			if(intent.hasExtra(BUNDLE_SELECTED)) {
@@ -344,22 +381,9 @@ public class MainActivity extends SkyListActivity {
 				return;
 			}
 
-			// Checks whether we should scroll to today.
-			final boolean scrollToToday = activity.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getBoolean("list_scrollToToday", true);
-			if(!scrollToToday) {
-				return;
-			}
-
-			// If everything is ok we get the date classifier.
-			final DateClassifier dateClassifier = DateClassifier.getTodayClassifier(activity);
-			if(dateClassifier == null) {
-				return;
-			}
-
-			// And we scroll to the position.
-			final int position = Utils.getClosestElementPosition(dateClassifier, result);
-			if(position != -1) {
-				todoRecyclerView.getLayoutManager().scrollToPosition(position);
+			// Otherwise, we scroll to the calculated position.
+			if(scrollToPosition != -1) {
+				todoRecyclerView.getLayoutManager().scrollToPosition(scrollToPosition);
 			}
 		}
 

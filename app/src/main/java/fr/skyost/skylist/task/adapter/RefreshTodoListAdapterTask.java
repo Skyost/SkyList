@@ -40,9 +40,8 @@ public class RefreshTodoListAdapterTask extends AsyncTask<Collection<TodoTask>, 
 		this.adapter = adapter;
 	}
 
-	@SafeVarargs
 	@Override
-	protected final List<TodoListAdapterItem> doInBackground(final Collection<TodoTask>... collections) {
+	protected List<TodoListAdapterItem> doInBackground(final Collection<TodoTask>... collections) {
 		// Initializes the classifier function.
 		if(classifierFunction == null) {
 			classifierFunction = Classifier.getClassifierFunction(adapter.getActivity());
