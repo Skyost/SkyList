@@ -29,6 +29,7 @@ import fr.skyost.skylist.task.adapter.Selection;
 import fr.skyost.skylist.task.adapter.TodoListAdapter;
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
 import fr.skyost.skylist.task.adapter.classifier.date.DateClassifier;
+import fr.skyost.skylist.util.Utils;
 import fr.skyost.skylist.widget.TriggerWidgetUpdate;
 
 /**
@@ -161,9 +162,8 @@ public class MainActivity extends SkyListActivity {
 	public boolean onOptionsItemSelected(final MenuItem item) {
 		switch(item.getItemId()) {
 		case R.id.menu_main_add:
-			// Here we add a task.
-			final TodoTask task = new TodoTask("");
-			showEditTaskDialog(task, (dialog, choice) -> model.addTask(task));
+			// We open the add task dialog.
+			showAddTaskDialog();
 			return true;
 		case R.id.menu_main_delete:
 			// Here we delete the current selection.
@@ -213,6 +213,13 @@ public class MainActivity extends SkyListActivity {
 		// And we make the required changes to views visibility.
 		findViewById(R.id.main_todo_loading).setVisibility(View.GONE);
 		refreshTodoListState(tasks);
+
+		// If we've started the activity through a shortcut, we open the edit dialog.
+		final String action = getIntent().getAction();
+		System.out.println(action);
+		if(action != null && action.equals(Intent.ACTION_INSERT)) {
+			showAddTaskDialog();
+		}
 	}
 
 	/**
@@ -243,6 +250,16 @@ public class MainActivity extends SkyListActivity {
 		}
 
 		invalidateOptionsMenu();
+	}
+
+	/**
+	 * Shows the add task dialog (which is in fact an edit task dialog).
+	 */
+
+	public void showAddTaskDialog() {
+		// Here we add a task.
+		final TodoTask task = new TodoTask("");
+		showEditTaskDialog(task, (dialog, choice) -> model.addTask(task));
 	}
 
 	/**
@@ -340,7 +357,7 @@ public class MainActivity extends SkyListActivity {
 			}
 
 			// And we scroll to the position.
-			final int position = result.indexOf(dateClassifier);
+			final int position = Utils.getClosestElementPosition(dateClassifier, result);
 			if(position != -1) {
 				todoRecyclerView.getLayoutManager().scrollToPosition(position);
 			}

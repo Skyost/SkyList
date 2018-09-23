@@ -1,0 +1,13 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/app_shortcut_add"
+        android:shortcutId="compose"
+        android:shortcutLongLabel="@string/main_menu_add"
+        android:shortcutShortLabel="@string/main_menu_add">
+        <intent
+            android:action="android.intent.action.INSERT"
+            android:targetClass="fr.skyost.skylist.activity.MainActivity"
+            android:targetPackage="${applicationId}"/>
+    </shortcut>
+</shortcuts>

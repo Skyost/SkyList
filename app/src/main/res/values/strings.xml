@@ -17,7 +17,7 @@
 
     <string name="main_dialog_edit_description">Describe your task here</string>
 
-    <string name="main_menu_add">Add…</string>
+    <string name="main_menu_add">Add task…</string>
     <string name="menu_main_delete">Delete task(s)</string>
     <string name="menu_main_settings">Settings…</string>
 

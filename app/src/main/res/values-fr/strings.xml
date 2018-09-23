@@ -15,7 +15,7 @@
 
     <string name="main_dialog_edit_description">Décrivez votre tâche ici</string>
 
-    <string name="main_menu_add">Ajouter…</string>
+    <string name="main_menu_add">Ajouter une tâche…</string>
     <string name="menu_main_delete">Supprimer les tâches</string>
     <string name="menu_main_settings">Paramètres…</string>
 

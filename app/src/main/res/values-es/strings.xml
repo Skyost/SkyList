@@ -15,7 +15,7 @@
 
     <string name="main_dialog_edit_description">Describe su tarea aquí</string>
 
-    <string name="main_menu_add">Añadir…</string>
+    <string name="main_menu_add">Añadir une tarea…</string>
     <string name="menu_main_delete">Borrar las tareas</string>
     <string name="menu_main_settings">Ajustas…</string>
 

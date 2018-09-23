@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'de.timfreiheit.resourceplaceholders.plugin'
 
 android {
     compileSdkVersion 27
@@ -52,4 +53,8 @@ dependencies {
 
     implementation 'joda-time:joda-time:2.10'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
+}
+
+resourcePlaceholders {
+    files = ['xml/app_shortcuts.xml']
 }
