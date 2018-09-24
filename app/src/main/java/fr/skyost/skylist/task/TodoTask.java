@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 
 import org.joda.time.LocalDate;
 
+import java.util.Locale;
+
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
 
 /**
@@ -195,7 +197,8 @@ public class TodoTask implements TodoListAdapterItem, Comparable<TodoTask> {
 
 	@Override
 	public int compareTo(@NonNull final TodoTask task) {
-		int result = description.toLowerCase().compareTo(task.description.toLowerCase());
+		final Locale defaultLocale = Locale.getDefault();
+		int result = description.toLowerCase(defaultLocale).compareTo(task.description.toLowerCase(defaultLocale));
 		if(result != 0) {
 			return result;
 		}

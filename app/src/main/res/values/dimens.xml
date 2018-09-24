@@ -4,10 +4,10 @@
     <dimen name="main_todo_empty_size">20sp</dimen>
     <dimen name="main_todo_empty_padding_left">10dp</dimen>
     <dimen name="main_todo_colorcircle_size">10dp</dimen>
-    <dimen name="main_todo_item_padding_top">15dp</dimen>
-    <dimen name="main_todo_item_padding_left">20dp</dimen>
-    <dimen name="main_todo_item_margin_top">1dp</dimen>
-    <dimen name="main_todo_item_margin_left">10dp</dimen>
+    <dimen name="main_todo_task_padding_top">15dp</dimen>
+    <dimen name="main_todo_task_padding_left">20dp</dimen>
+    <dimen name="main_todo_task_margin_bottom">1dp</dimen>
+    <dimen name="main_todo_task_margin_left">10dp</dimen>
 
     <dimen name="main_edit_color_item_padding_top">10dp</dimen>
     <dimen name="main_edit_color_item_padding_left">12dp</dimen>
@@ -19,7 +19,7 @@
     <dimen name="widget_title_padding_left">10dp</dimen>
     <dimen name="widget_todo_padding">10dp</dimen>
     <dimen name="widget_todo_colorcircle_margin_right">10dp</dimen>
-    <dimen name="widget_todo_item_padding_top">10dp</dimen>
-    <dimen name="widget_todo_item_padding_left">15dp</dimen>
-    <dimen name="widget_todo_item_margin_top">1dp</dimen>
+    <dimen name="widget_todo_task_padding_top">10dp</dimen>
+    <dimen name="widget_todo_task_padding_left">15dp</dimen>
+    <dimen name="widget_todo_task_margin_top">1dp</dimen>
 </resources>

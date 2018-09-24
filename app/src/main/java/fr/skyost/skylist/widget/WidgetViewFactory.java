@@ -88,7 +88,7 @@ public class WidgetViewFactory implements RemoteViewsService.RemoteViewsFactory 
 	@Override
 	public RemoteViews getViewAt(final int position) {
 		// We create the row view.
-		final RemoteViews row = new RemoteViews(context.getPackageName(), R.layout.widget_todo_item);
+		final RemoteViews row = new RemoteViews(context.getPackageName(), R.layout.widget_todo_task);
 		final TodoTask task = tasks.get(position);
 
 		// If there is no task we hide the circle and display the corresponding string to the user. Otherwise we use the normal behaviour.

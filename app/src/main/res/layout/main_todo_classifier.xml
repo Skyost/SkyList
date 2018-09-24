@@ -2,9 +2,10 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/main_todo_item_margin_left"
-          android:layout_marginStart="@dimen/main_todo_item_margin_left"
-          android:paddingBottom="@dimen/main_todo_item_padding_top"
-          android:paddingTop="@dimen/main_todo_item_padding_top">
+          android:layout_marginLeft="@dimen/main_todo_task_margin_left"
+          android:layout_marginStart="@dimen/main_todo_task_margin_left"
+          android:layout_alignBottom="@dimen/main_todo_task_margin_bottom"
+          android:paddingBottom="@dimen/main_todo_task_padding_top"
+          android:paddingTop="@dimen/main_todo_task_padding_top">
 
 </TextView>

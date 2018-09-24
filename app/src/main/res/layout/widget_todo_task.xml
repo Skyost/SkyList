@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/widget_todo_item_margin_top"
-                android:layout_marginTop="@dimen/widget_todo_item_margin_top"
+                android:layout_marginBottom="@dimen/widget_todo_task_margin_top"
+                android:layout_marginTop="@dimen/widget_todo_task_margin_top"
                 android:background="@color/dark_primary"
-                android:paddingBottom="@dimen/widget_todo_item_padding_top"
-                android:paddingLeft="@dimen/widget_todo_item_padding_left"
-                android:paddingRight="@dimen/widget_todo_item_padding_left"
-                android:paddingTop="@dimen/widget_todo_item_padding_top">
+                android:paddingBottom="@dimen/widget_todo_task_padding_top"
+                android:paddingLeft="@dimen/widget_todo_task_padding_left"
+                android:paddingRight="@dimen/widget_todo_task_padding_left"
+                android:paddingTop="@dimen/widget_todo_task_padding_top">
 
     <TextView
         android:id="@+id/widget_todo_colorcircle"

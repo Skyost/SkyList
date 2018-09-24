@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/main_todo_item_margin_top"
-                android:layout_marginLeft="@dimen/main_todo_item_margin_left"
-                android:layout_marginRight="@dimen/main_todo_item_margin_left"
+                android:layout_marginBottom="@dimen/main_todo_task_margin_bottom"
+                android:layout_marginLeft="@dimen/main_todo_task_margin_left"
+                android:layout_marginRight="@dimen/main_todo_task_margin_left"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:paddingBottom="@dimen/main_todo_item_padding_top"
-                android:paddingLeft="@dimen/main_todo_item_padding_left"
-                android:paddingRight="@dimen/main_todo_item_padding_left"
-                android:paddingTop="@dimen/main_todo_item_padding_top">
+                android:paddingBottom="@dimen/main_todo_task_padding_top"
+                android:paddingLeft="@dimen/main_todo_task_padding_left"
+                android:paddingRight="@dimen/main_todo_task_padding_left"
+                android:paddingTop="@dimen/main_todo_task_padding_top">
 
     <fr.skyost.skylist.view.ColorCircleView
         android:id="@+id/main_todo_colorcircle"
@@ -18,8 +18,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="@dimen/main_todo_item_padding_left"
-        android:layout_marginRight="@dimen/main_todo_item_padding_left"/>
+        android:layout_marginEnd="@dimen/main_todo_task_padding_left"
+        android:layout_marginRight="@dimen/main_todo_task_padding_left"/>
 
     <TextView
         android:id="@+id/main_todo_description"
