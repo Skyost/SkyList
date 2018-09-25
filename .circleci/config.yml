@@ -27,10 +27,10 @@ jobs:
           name: Assemble debug APK
           command: ./gradlew assemble -Pandroid.enableJetifier=true -Pandroid.useAndroidX=true
       - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: apk
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
       - store_test_results:
-          path: app/build/test-results
+          path: app/build/reports
