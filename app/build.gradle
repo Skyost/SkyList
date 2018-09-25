@@ -8,7 +8,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 4
-        versionName 'v0.1.3'
+        versionName 'v0.2'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
         javaCompileOptions {
@@ -39,7 +39,7 @@ dependencies {
     def roomVersion = '2.0.0-rc01'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.google.android.material:material:$androidXVersion"
+    // implementation "com.google.android.material:material:$androidXVersion"
     implementation "androidx.appcompat:appcompat:$androidXVersion"
     implementation "androidx.preference:preference:$androidXVersion"
     implementation "androidx.vectordrawable:vectordrawable:$androidXVersion"
