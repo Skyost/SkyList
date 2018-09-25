@@ -3,8 +3,6 @@ package fr.skyost.skylist.dialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +10,8 @@ import android.widget.Spinner;
 
 import org.joda.time.LocalDate;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.task.TodoTask;
 

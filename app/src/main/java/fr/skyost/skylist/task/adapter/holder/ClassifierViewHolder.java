@@ -1,8 +1,8 @@
 package fr.skyost.skylist.task.adapter.holder;
 
-import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import fr.skyost.skylist.activity.MainActivity;
 import fr.skyost.skylist.task.adapter.TodoListAdapterViewHolder;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;

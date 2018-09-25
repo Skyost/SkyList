@@ -5,14 +5,14 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.StyleRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 
+import androidx.annotation.ColorRes;
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import fr.skyost.skylist.activity.SettingsActivity;
 
 /**

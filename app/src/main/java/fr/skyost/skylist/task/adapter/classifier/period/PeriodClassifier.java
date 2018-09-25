@@ -1,10 +1,10 @@
 package fr.skyost.skylist.task.adapter.classifier.period;
 
 import android.content.res.Resources;
-import android.support.annotation.StringRes;
 
 import org.joda.time.LocalDate;
 
+import androidx.annotation.StringRes;
 import fr.skyost.skylist.task.adapter.classifier.date.DateClassifier;
 
 /**

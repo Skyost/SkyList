@@ -1,7 +1,8 @@
 package fr.skyost.skylist.task.adapter;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Represents a To-do list adapter view holder.

@@ -1,8 +1,8 @@
 package fr.skyost.skylist.task.database;
 
-import android.arch.persistence.room.TypeConverter;
-
 import org.joda.time.LocalDate;
+
+import androidx.room.TypeConverter;
 
 /**
  * Allows to convert a LocalDate to a String (and vice-versa).

@@ -7,17 +7,17 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.content.res.AppCompatResources;
 import android.view.MenuItem;
 
 import com.kobakei.ratethisapp.RateThisApp;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.content.ContextCompat;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceFragmentCompat;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.notification.NotificationHandler;
 import fr.skyost.skylist.task.adapter.classifier.date.AscendingDateClassifier;
@@ -42,7 +42,7 @@ public class SettingsActivity extends SkyListActivity {
 		super.onCreate(savedInstanceState);
 
 		// We only have one fragment, so let's display it !
-		getFragmentManager().beginTransaction().replace(android.R.id.content, new AppPreferencesFragment()).commit();
+		getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new AppPreferencesFragment()).commit();
 
 		// It's time to change the home icon drawable.
 		final ActionBar actionBar = getSupportActionBar();
@@ -51,6 +51,7 @@ public class SettingsActivity extends SkyListActivity {
 			return;
 		}
 
+		// Allows to color the home icon drawable.
 		final int color = getSkyListTheme().getMenuIconsColor();
 		if(color != -1) {
 			up.setColorFilter(ContextCompat.getColor(this, color), PorterDuff.Mode.SRC_ATOP);
@@ -74,12 +75,10 @@ public class SettingsActivity extends SkyListActivity {
 	 * The preferences fragment.
 	 */
 
-	public static class AppPreferencesFragment extends PreferenceFragment {
+	public static class AppPreferencesFragment extends PreferenceFragmentCompat {
 
 		@Override
-		public void onCreate(final Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-
+		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey) {
 			// We set the preference file and we add the preferences from the specified resource file.
 			getPreferenceManager().setSharedPreferencesName(APP_PREFERENCES);
 			addPreferencesFromResource(R.xml.app_preferences);
@@ -101,8 +100,8 @@ public class SettingsActivity extends SkyListActivity {
 				RateThisApp.showRateDialog(getActivity());
 				return true;
 			});
-			findPreference("about_skyost").setOnPreferenceClickListener((this::openDescriptionInBrowser));
-			findPreference("about_github").setOnPreferenceClickListener((this::openDescriptionInBrowser));
+			findPreference("about_skyost").setOnPreferenceClickListener(this::openDescriptionInBrowser);
+			findPreference("about_github").setOnPreferenceClickListener(this::openDescriptionInBrowser);
 		}
 
 		/**

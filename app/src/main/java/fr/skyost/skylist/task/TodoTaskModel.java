@@ -1,14 +1,14 @@
 package fr.skyost.skylist.task;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
 
 import java.util.Collection;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import fr.skyost.skylist.application.SkyListApplication;
 import fr.skyost.skylist.task.database.TodoTaskDao;
 

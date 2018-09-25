@@ -53,8 +53,8 @@ public class ColorCircleView extends View {
 	@Override
 	protected void onDraw(final Canvas canvas) {
 		// The center of our circle must be at the center of the canvas.
-		final float cx = canvas.getWidth() / 2;
-		final float cy = canvas.getHeight() / 2;
+		final float cx = getWidth() / 2;
+		final float cy = getHeight() / 2;
 
 		// The radius is the minimum between our X and Y coordinates.
 		final float radius = Math.min(cx, cy);

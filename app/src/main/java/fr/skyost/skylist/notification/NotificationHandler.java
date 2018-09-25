@@ -10,10 +10,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 
 import org.joda.time.DateTime;
 
+import androidx.annotation.RequiresApi;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.SettingsActivity;
 import fr.skyost.skylist.application.SkyListApplication;

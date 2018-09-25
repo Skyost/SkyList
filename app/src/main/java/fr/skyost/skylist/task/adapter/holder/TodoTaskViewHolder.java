@@ -1,11 +1,11 @@
 package fr.skyost.skylist.task.adapter.holder;
 
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 
+import androidx.core.content.ContextCompat;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.MainActivity;
 import fr.skyost.skylist.application.theme.SkyListTheme;

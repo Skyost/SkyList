@@ -5,13 +5,13 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.app.NotificationCompat;
 
 import org.joda.time.LocalDate;
 
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicReference;
 
+import androidx.core.app.NotificationCompat;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.MainActivity;
 import fr.skyost.skylist.task.TodoTask;

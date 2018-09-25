@@ -1,15 +1,15 @@
 package fr.skyost.skylist.task;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.PrimaryKey;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
 
 import org.joda.time.LocalDate;
 
 import java.util.Locale;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
 
 /**

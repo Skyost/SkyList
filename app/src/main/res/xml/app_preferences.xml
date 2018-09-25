@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="@string/settings_category_app">
+    <PreferenceCategory
+        android:title="@string/settings_category_app"
+        app:iconSpaceReserved="false">
 
         <ListPreference
             android:key="app_theme"
@@ -9,19 +12,22 @@
             android:title="@string/settings_app_theme_title"
             android:entries="@array/settings_theme_entries"
             android:entryValues="@array/settings_theme_values"
-            android:defaultValue="0"/>
+            android:defaultValue="0"
+            app:iconSpaceReserved="false"/>
 
         <CheckBoxPreference
             android:key="app_notification"
             android:summary="@string/settings_app_notification_summary"
             android:title="@string/settings_app_notification_title"
-            android:defaultValue="true"/>
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/settings_category_list"
-        android:key="settings_category_list">
+        android:key="settings_category_list"
+        app:iconSpaceReserved="false">
 
         <ListPreference
             android:key="list_order"
@@ -29,35 +35,42 @@
             android:title="@string/settings_list_order_title"
             android:entries="@array/settings_list_order_entries"
             android:entryValues="@array/settings_list_order_values"
-            android:defaultValue="1"/>
+            android:defaultValue="1"
+            app:iconSpaceReserved="false"/>
 
         <CheckBoxPreference
             android:key="list_scrollToToday"
             android:summary="@string/settings_list_scrollToToday_summary"
             android:title="@string/settings_list_scrollToToday_title"
-            android:defaultValue="true"/>
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/settings_category_about">
+    <PreferenceCategory
+        android:title="@string/settings_category_about"
+        app:iconSpaceReserved="false">
 
         <Preference
             android:key="about_app"
             android:persistent="false"
             android:summary="@string/settings_about_app_summary"
-            android:title="@string/settings_about_app_title"/>
+            android:title="@string/settings_about_app_title"
+            app:iconSpaceReserved="false"/>
 
         <Preference
             android:key="about_skyost"
             android:persistent="false"
             android:summary="@string/settings_about_skyost_summary"
-            android:title="@string/settings_about_skyost_title"/>
+            android:title="@string/settings_about_skyost_title"
+            app:iconSpaceReserved="false"/>
 
         <Preference
             android:key="about_github"
             android:persistent="false"
             android:summary="@string/settings_about_github_summary"
-            android:title="@string/settings_about_github_title"/>
+            android:title="@string/settings_about_github_title"
+            app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>
 

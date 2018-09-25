@@ -1,9 +1,9 @@
 package fr.skyost.skylist.task.adapter.classifier;
 
 import android.content.res.Resources;
-import android.support.annotation.NonNull;
 import android.util.SparseArray;
 
+import androidx.annotation.NonNull;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.task.TodoTask;
 

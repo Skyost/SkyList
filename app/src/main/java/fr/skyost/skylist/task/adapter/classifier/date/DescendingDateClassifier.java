@@ -1,9 +1,8 @@
 package fr.skyost.skylist.task.adapter.classifier.date;
 
-import android.support.annotation.NonNull;
-
 import org.joda.time.LocalDate;
 
+import androidx.annotation.NonNull;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
 

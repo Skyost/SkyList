@@ -1,11 +1,10 @@
 package fr.skyost.skylist.task.adapter;
 
-import android.arch.lifecycle.LiveData;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import androidx.lifecycle.LiveData;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.TodoTaskModel;
 

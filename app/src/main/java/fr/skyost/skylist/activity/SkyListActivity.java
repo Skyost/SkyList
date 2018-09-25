@@ -1,8 +1,8 @@
 package fr.skyost.skylist.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import fr.skyost.skylist.application.SkyListApplication;
 import fr.skyost.skylist.application.theme.SkyListTheme;
 

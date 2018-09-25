@@ -1,7 +1,6 @@
 package fr.skyost.skylist.task.adapter.classifier.alphabetical;
 
-import android.support.annotation.NonNull;
-
+import androidx.annotation.NonNull;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
 
