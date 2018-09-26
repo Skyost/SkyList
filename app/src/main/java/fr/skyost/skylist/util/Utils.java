@@ -22,7 +22,7 @@ public class Utils {
 
 	public static int getClosestElementPosition(final Classifier target, final List<TodoListAdapterItem> list) {
 		// We save the last data (compareTo & position).
-		int compareToResult = 10;
+		Integer compareToResult = null;
 		int lastPosition = -1;
 
 		// We iterate through the list.
@@ -36,7 +36,7 @@ public class Utils {
 			int result = Math.abs(target.compareTo((Classifier)element));
 
 			// If the new compareTo is closer than the previous one, we update the references.
-			if(result < compareToResult) {
+			if(compareToResult == null || result < compareToResult) {
 				compareToResult = result;
 				lastPosition = i;
 			}
