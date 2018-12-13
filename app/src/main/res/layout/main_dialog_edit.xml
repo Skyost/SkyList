@@ -12,7 +12,8 @@
         android:hint="@string/main_dialog_edit_description"
         android:inputType="textMultiLine"
         android:maxLines="3"
-        android:minLines="1"/>
+        android:minLines="1"
+        android:importantForAutofill="no"/>
 
     <Button
         android:id="@+id/main_dialog_edit_date"

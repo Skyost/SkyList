@@ -34,16 +34,15 @@ android {
 }
 
 dependencies {
-    def androidXVersion = '1.0.0'
     def lifecycleVersion = '2.0.0'
-    def roomVersion = '2.0.0-rc01'
+    def roomVersion = '2.0.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // implementation "com.google.android.material:material:$androidXVersion"
-    implementation "androidx.appcompat:appcompat:$androidXVersion"
-    implementation "androidx.preference:preference:$androidXVersion"
-    implementation "androidx.vectordrawable:vectordrawable:$androidXVersion"
-    implementation "androidx.recyclerview:recyclerview:$androidXVersion"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
@@ -51,7 +50,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$roomVersion"
     annotationProcessor "androidx.room:room-compiler:$roomVersion"
 
-    implementation 'joda-time:joda-time:2.10'
+    implementation 'joda-time:joda-time:2.10.1'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
 }
 
