@@ -8,7 +8,7 @@ import org.joda.time.LocalDate;
 import java.text.SimpleDateFormat;
 
 import fr.skyost.skylist.R;
-import fr.skyost.skylist.activity.SettingsActivity;
+import fr.skyost.skylist.activity.settings.SettingsActivity;
 import fr.skyost.skylist.task.adapter.classifier.Classifier;
 import fr.skyost.skylist.task.adapter.classifier.period.AscendingPeriodClassifier;
 import fr.skyost.skylist.task.adapter.classifier.period.DescendingPeriodClassifier;

@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import fr.skyost.skylist.R;
+import fr.skyost.skylist.activity.settings.SettingsActivity;
 import fr.skyost.skylist.dialog.EditTaskDialog;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.TodoTaskModel;
@@ -56,6 +57,12 @@ public class MainActivity extends SkyListActivity {
 	 */
 
 	private static final String BUNDLE_RATETHISAPP = "rateThisApp";
+
+	/**
+	 * The settings activity code.
+	 */
+
+	private static int ACTIVITY_SETTINGS = 0;
 
 	/**
 	 * The dialog that allows to edit tasks.
@@ -148,6 +155,21 @@ public class MainActivity extends SkyListActivity {
 	}
 
 	@Override
+	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		// We only have one activity, so let's check if this is good.
+		if(requestCode != ACTIVITY_SETTINGS) {
+			return;
+		}
+
+		// If it is needed to restart the activity, then we restart it.
+		if(data != null && data.getBooleanExtra(SettingsActivity.BUNDLE_NEED_RESTART, false)) {
+			Utils.restart(this);
+		}
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);
 		getSkyListTheme().apply(this, menu);
@@ -173,7 +195,7 @@ public class MainActivity extends SkyListActivity {
 			return true;
 		case R.id.menu_main_settings:
 			// And here we start the settings activity.
-			startActivity(new Intent(this, SettingsActivity.class));
+			startActivityForResult(new Intent(this, SettingsActivity.class), ACTIVITY_SETTINGS);
 			return true;
 		}
 

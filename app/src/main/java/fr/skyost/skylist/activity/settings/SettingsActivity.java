@@ -1,5 +1,7 @@
-package fr.skyost.skylist.activity;
+package fr.skyost.skylist.activity.settings;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,8 +10,12 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.github.jksiezni.permissive.Permissive;
 import com.kobakei.ratethisapp.RateThisApp;
+
+import java.io.File;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +25,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import fr.skyost.skylist.R;
+import fr.skyost.skylist.activity.SkyListActivity;
+import fr.skyost.skylist.application.SkyListApplication;
 import fr.skyost.skylist.notification.NotificationHandler;
 import fr.skyost.skylist.task.adapter.classifier.date.AscendingDateClassifier;
 import fr.skyost.skylist.task.adapter.classifier.date.DescendingDateClassifier;
@@ -37,9 +45,26 @@ public class SettingsActivity extends SkyListActivity {
 
 	public static final String APP_PREFERENCES = "app_preferences";
 
+	/**
+	 * The need restart bundle key.
+	 */
+
+	public static String BUNDLE_NEED_RESTART = "need-restart";
+
+	/**
+	 * Whether a restart of the main activity is needed.
+	 */
+
+	private boolean needRestart = false;
+
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// We have to restore the fields.
+		if(savedInstanceState != null) {
+			needRestart = savedInstanceState.getBoolean(BUNDLE_NEED_RESTART, false);
+		}
 
 		// We only have one fragment, so let's display it !
 		getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new AppPreferencesFragment()).commit();
@@ -60,6 +85,13 @@ public class SettingsActivity extends SkyListActivity {
 	}
 
 	@Override
+	protected void onSaveInstanceState(final Bundle outState) {
+		outState.putBoolean(BUNDLE_NEED_RESTART, needRestart);
+
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
 	public boolean onOptionsItemSelected(final MenuItem item) {
 		switch(item.getItemId()) {
 		case android.R.id.home:
@@ -69,6 +101,15 @@ public class SettingsActivity extends SkyListActivity {
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onBackPressed() {
+		final Intent intent = new Intent();
+		intent.putExtra(BUNDLE_NEED_RESTART, needRestart);
+		setResult(Activity.RESULT_OK, intent);
+
+		super.onBackPressed();
 	}
 
 	/**
@@ -96,6 +137,10 @@ public class SettingsActivity extends SkyListActivity {
 				toggleScrollToTodayPreference(newValue);
 				return openRestartApplicationDialogIfNeeded("show_list_order_dialog");
 			});
+
+			findPreference("backup_backup").setOnPreferenceClickListener(preference -> backupDatabase());
+			findPreference("backup_restore").setOnPreferenceClickListener(preference -> restoreDatabase());
+
 			findPreference("about_app").setOnPreferenceClickListener(preference -> {
 				RateThisApp.showRateDialog(getActivity());
 				return true;
@@ -166,6 +211,80 @@ public class SettingsActivity extends SkyListActivity {
 		}
 
 		/**
+		 * Backups the application database.
+		 *
+		 * @return Always true.
+		 */
+
+		private boolean backupDatabase() {
+			// We get the activity.
+			final Activity activity = getActivity();
+			if(activity == null) {
+				return true;
+			}
+
+			// And we try to launch the save database task.
+			new Permissive.Request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+					.whenPermissionsGranted(permissions -> new SaveDatabaseTask().execute((SkyListApplication)activity.getApplication()))
+					.whenPermissionsRefused(permissions -> openMissingPermissionDialog(activity))
+					.execute(activity);
+
+			return true;
+		}
+
+		/**
+		 * Backups the application database.
+		 *
+		 * @return Always true.
+		 */
+
+		private boolean restoreDatabase() {
+			// We get the activity.
+			final Activity activity = getActivity();
+			if(activity == null) {
+				return true;
+			}
+
+			// And we try to launch the load database task.
+			new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE)
+					.whenPermissionsGranted(permissions -> {
+						// If there is no backup directory, we can exit right away.
+						final File sourceDirectory = SaveDatabaseTask.getBackupsDirectory();
+						if(!sourceDirectory.exists()) {
+							Toast.makeText(activity, R.string.toast_nobackup, Toast.LENGTH_LONG).show();
+							return;
+						}
+
+						// Otherwise, we can show a dialog with a list of backups.
+						final String[] backups = sourceDirectory.list();
+						new AlertDialog.Builder(activity)
+								.setItems(backups, (dialog, which) -> new LoadDatabaseTask(new File(sourceDirectory, backups[which])).execute((SettingsActivity)getActivity()))
+								.setNegativeButton(android.R.string.cancel, null)
+								.show();
+
+					})
+					.whenPermissionsRefused(permissions -> openMissingPermissionDialog(activity))
+					.execute(activity);
+
+			return true;
+		}
+
+		/**
+		 * Opens a dialog that says that the application doesn't have sufficient permissions.
+		 *
+		 * @param context The context.
+		 */
+
+		private void openMissingPermissionDialog(final Context context) {
+			new AlertDialog.Builder(context)
+					.setTitle("Missing permission")
+					.setMessage("We need to have access to your storage to backup / restore your tasks !")
+					.setPositiveButton("Retry", (dialog, choice) -> backupDatabase())
+					.setNegativeButton(android.R.string.cancel, null)
+					.show();
+		}
+
+		/**
 		 * Opens the URL (located in the specified preference description) in the browser.
 		 *
 		 * @param preference The Preference object.
@@ -181,6 +300,26 @@ public class SettingsActivity extends SkyListActivity {
 			return true;
 		}
 
+	}
+
+	/**
+	 * Returns whether the main activity needs to restart.
+	 *
+	 * @return Whether the main activity needs to restart.
+	 */
+
+	public boolean needRestart() {
+		return needRestart;
+	}
+
+	/**
+	 * Sets whether the main activity needs to restart.
+	 *
+	 * @param needRestart Whether the main activity needs to restart.
+	 */
+
+	public void setNeedRestart(final boolean needRestart) {
+		this.needRestart = needRestart;
 	}
 
 }

@@ -39,6 +39,12 @@
     <string name="settings_list_scrollToToday_title">Aller à aujourd\'hui</string>
     <string name="settings_list_scrollToToday_summary">Accéder automatiquement aux tâches du jour à l\'ouverture.</string>
 
+    <string name="settings_backup_title">Sauvegarde et Restauration</string>
+    <string name="settings_backup_backup_title">Sauvegarde des tâches</string>
+    <string name="settings_backup_backup_summary">Sauvegarde toutes vos tâches.</string>
+    <string name="settings_backup_restore_title">Restaurer des tâches</string>
+    <string name="settings_backup_restore_summary">Restaure les tâches d\'une sauvegarde précédente.</string>
+
     <string name="settings_about_app_title">À Propos</string>
     <string name="settings_about_app_summary">SkyList a été créé par Skyost. Si vous l\'aimez, veuillez ne pas oublier de laisser une bonne note sur Google Play !</string>
 
@@ -47,4 +53,8 @@
     <string name="notification_channel">Rappel de Tâches</string>
     <string name="notification_title">Tâches du jour</string>
     <string name="notification_content">Vous avez %d tâche(s) à faire aujourd\'hui.</string>
+
+    <string name="toast_success">Succès !</string>
+    <string name="toast_error">Une erreur est survenue : "%s".</string>
+    <string name="toast_nobackup">Il n\'y a pas de sauvegarde disponible.</string>
 </resources>

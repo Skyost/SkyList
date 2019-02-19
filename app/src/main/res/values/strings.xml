@@ -5,7 +5,7 @@
 
     <string name="main_todo_task_default_description">A Task</string>
     <string name="main_todo_empty">There is no task for the moment</string>
-    <string name="main_todo_first">This is a Task. Edit with a simple press or delete it with a long press.</string>
+    <string name="main_todo_first">This is a Task. Edit it with a simple press or delete it with a long press.</string>
 
     <string name="main_classifier_dateRange_upcoming">Upcoming</string>
     <string name="main_classifier_dateRange_tomorrow">Tomorrow</string>
@@ -41,6 +41,12 @@
     <string name="settings_list_scrollToToday_title">Scroll to today</string>
     <string name="settings_list_scrollToToday_summary">Automatically scroll to today\'s tasks when opening the application.</string>
 
+    <string name="settings_backup_title">Backup and Restore</string>
+    <string name="settings_backup_backup_title">Backup tasks</string>
+    <string name="settings_backup_backup_summary">Backup all your tasks.</string>
+    <string name="settings_backup_restore_title">Restore tasks</string>
+    <string name="settings_backup_restore_summary">Restore the tasks from a previous backup.</string>
+
     <string name="settings_about_app_title">About</string>
     <string name="settings_about_app_summary">SkyList has been created by Skyost. If you enjoy it, please do not forget to leave a good rating on Google Play !</string>
     <string name="settings_about_skyost_title" translatable="false">Skyost</string>
@@ -53,4 +59,8 @@
     <string name="notification_channel">Task Reminder</string>
     <string name="notification_title">Today\'s tasks</string>
     <string name="notification_content">You have %d task(s) to do today.</string>
+
+    <string name="toast_success">Success !</string>
+    <string name="toast_error">An error occurred : "%s".</string>
+    <string name="toast_nobackup">There is no available backup.</string>
 </resources>

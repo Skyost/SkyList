@@ -72,6 +72,15 @@ public interface TodoTaskDao {
 	long addTask(final TodoTask task);
 
 	/**
+	 * Adds all tasks to the table.
+	 *
+	 * @param tasks The task to add.
+	 */
+
+	@Insert
+	void addTasks(final Collection<TodoTask> tasks);
+
+	/**
 	 * Saves the specified task to the database.
 	 *
 	 * @param task The task to update.

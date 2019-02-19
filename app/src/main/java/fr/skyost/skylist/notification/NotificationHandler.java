@@ -15,7 +15,7 @@ import org.joda.time.DateTime;
 
 import androidx.annotation.RequiresApi;
 import fr.skyost.skylist.R;
-import fr.skyost.skylist.activity.SettingsActivity;
+import fr.skyost.skylist.activity.settings.SettingsActivity;
 import fr.skyost.skylist.application.SkyListApplication;
 
 /**

@@ -13,7 +13,7 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
-import fr.skyost.skylist.activity.SettingsActivity;
+import fr.skyost.skylist.activity.settings.SettingsActivity;
 
 /**
  * Represents a SkyList theme that allows to theme the application.

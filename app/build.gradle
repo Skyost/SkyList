@@ -7,8 +7,8 @@ android {
         applicationId 'fr.skyost.skylist'
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 7
-        versionName 'v0.2.2'
+        versionCode 8
+        versionName 'v0.2.3'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
         javaCompileOptions {
@@ -38,7 +38,6 @@ dependencies {
     def roomVersion = '2.0.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // implementation "com.google.android.material:material:$androidXVersion"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.preference:preference:1.0.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
@@ -52,6 +51,7 @@ dependencies {
 
     implementation 'joda-time:joda-time:2.10.1'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
+    implementation 'com.github.jksiezni.permissive:permissive:0.2'
 }
 
 resourcePlaceholders {

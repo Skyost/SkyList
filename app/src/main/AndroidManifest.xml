@@ -3,6 +3,8 @@
           package="fr.skyost.skylist">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".application.SkyListApplication"
@@ -24,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".activity.settings.SettingsActivity"
             android:label="@string/settings_title"
             android:parentActivityName=".activity.MainActivity">
             <meta-data

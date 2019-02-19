@@ -79,6 +79,16 @@ public class SkyListApplication extends Application {
 	}
 
 	/**
+	 * Sets the database.
+	 *
+	 * @param database The database.
+	 */
+
+	public void setDatabase(final String database) {
+		this.database = Room.databaseBuilder(this, SkyListDatabase.class, database).build();
+	}
+
+	/**
 	 * Returns the current applied theme.
 	 *
 	 * @return The current applied theme.

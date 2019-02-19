@@ -3,7 +3,7 @@ package fr.skyost.skylist.task.adapter.classifier;
 import android.content.Context;
 import android.content.res.Resources;
 
-import fr.skyost.skylist.activity.SettingsActivity;
+import fr.skyost.skylist.activity.settings.SettingsActivity;
 import fr.skyost.skylist.task.TodoTask;
 import fr.skyost.skylist.task.adapter.TodoListAdapterItem;
 import fr.skyost.skylist.task.adapter.classifier.alphabetical.AscendingAlphabeticalClassifier;

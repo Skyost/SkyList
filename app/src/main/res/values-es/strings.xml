@@ -39,6 +39,12 @@
     <string name="settings_list_scrollToToday_title">Desplazar la lista hacia hoy</string>
     <string name="settings_list_scrollToToday_summary">Automáticamente desplazar la lista hacia hoy cuando abre la aplicación.</string>
 
+    <string name="settings_backup_title">Respaldo y restauración</string>
+    <string name="settings_backup_backup_title">Guardar tareas</string>
+    <string name="settings_backup_backup_summary">Guarda todas sus tareas.</string>
+    <string name="settings_backup_restore_title">Restaurar tareas</string>
+    <string name="settings_backup_restore_summary">Restaura las tareas de una copia de seguridad anterior.</string>
+
     <string name="settings_about_app_title">A Proposito</string>
     <string name="settings_about_app_summary">SkyList fue creado por Skyost. Si se encantala, por favor dejar una buena nota sobre el Google Play !</string>
 
@@ -47,4 +53,8 @@
     <string name="notification_channel">Recordatorio de Tareas</string>
     <string name="notification_title">Tareas para hoy</string>
     <string name="notification_content">Tiene %d tarea(s) a realizar hoy.</string>
+
+    <string name="toast_success">Éxito !</string>
+    <string name="toast_error">Ocurrió un error : "%s".</string>
+    <string name="toast_nobackup">No hay respaldo disponible.</string>
 </resources>

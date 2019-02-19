@@ -48,6 +48,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/settings_backup_title"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="backup_backup"
+            android:persistent="false"
+            android:summary="@string/settings_backup_backup_summary"
+            android:title="@string/settings_backup_backup_title"
+            app:iconSpaceReserved="false"/>
+
+        <Preference
+            android:key="backup_restore"
+            android:persistent="false"
+            android:summary="@string/settings_backup_restore_summary"
+            android:title="@string/settings_backup_restore_title"
+            app:iconSpaceReserved="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/settings_category_about"
         app:iconSpaceReserved="false">
 
