@@ -72,11 +72,24 @@
         <item>Yellow</item>
         <item>Green</item>
     </string-array>
+
     <string-array name="settings_theme_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
+    </string-array>
+
+    <string-array name="settings_notificationMode_entries">
+        <item>Precise</item>
+        <item>Imprecise</item>
+        <item>Disabled</item>
+    </string-array>
+
+    <string-array name="settings_notificationMode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>

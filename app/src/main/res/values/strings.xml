@@ -30,8 +30,8 @@
     <string name="settings_app_theme_title">Application Theme</string>
     <string name="settings_app_theme_summary">This setting allows you to change the application theme.</string>
 
-    <string name="settings_app_notification_title">Task reminder</string>
-    <string name="settings_app_notification_summary">If there are tasks to accomplish on a day, the application will send you a notification.</string>
+    <string name="settings_app_notificationMode_title">Task reminder</string>
+    <string name="settings_app_notificationMode_summary">If there are tasks to accomplish on a day, the application will send you a notification.</string>
 
     <string name="settings_list_order_warning_title">Warning !</string>
     <string name="settings_list_order_warning_message">You must restart the application to see the changes.</string>

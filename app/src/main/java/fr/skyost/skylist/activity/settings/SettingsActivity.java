@@ -12,11 +12,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.github.jksiezni.permissive.Permissive;
-import com.kobakei.ratethisapp.RateThisApp;
-
-import java.io.File;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -24,6 +19,12 @@ import androidx.core.content.ContextCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.github.jksiezni.permissive.Permissive;
+import com.kobakei.ratethisapp.RateThisApp;
+
+import java.io.File;
+
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.SkyListActivity;
 import fr.skyost.skylist.application.SkyListApplication;
@@ -120,15 +121,20 @@ public class SettingsActivity extends SkyListActivity {
 
 		@Override
 		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey) {
+			final Activity activity = getActivity();
+			if(activity == null) {
+				return;
+			}
+
 			// We set the preference file and we add the preferences from the specified resource file.
 			getPreferenceManager().setSharedPreferencesName(APP_PREFERENCES);
 			addPreferencesFromResource(R.xml.app_preferences);
 
 			// Then we add all the required listeners to the preferences.
 			findPreference("app_theme").setOnPreferenceChangeListener(((preference, newValue) -> openRestartApplicationDialogIfNeeded("show_app_theme_dialog")));
-			findPreference("app_notification").setOnPreferenceChangeListener((preference, newValue) -> {
-				if((Boolean)newValue) {
-					NotificationHandler.scheduleNextNotification(this.getActivity());
+			findPreference("app_notificationMode").setOnPreferenceChangeListener((preference, newValue) -> {
+				if(!newValue.toString().equals("2")) {
+					NotificationHandler.scheduleNextNotification(activity);
 				}
 				return true;
 			});
@@ -142,7 +148,7 @@ public class SettingsActivity extends SkyListActivity {
 			findPreference("backup_restore").setOnPreferenceClickListener(preference -> restoreDatabase());
 
 			findPreference("about_app").setOnPreferenceClickListener(preference -> {
-				RateThisApp.showRateDialog(getActivity());
+				RateThisApp.showRateDialog(activity);
 				return true;
 			});
 			findPreference("about_skyost").setOnPreferenceClickListener(this::openDescriptionInBrowser);

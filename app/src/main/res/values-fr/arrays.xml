@@ -40,4 +40,10 @@
         <item>Jaune</item>
         <item>Vert</item>
     </string-array>
+
+    <string-array name="settings_notificationMode_entries">
+        <item>Précis</item>
+        <item>Imprécis</item>
+        <item>Désactivé</item>
+    </string-array>
 </resources>

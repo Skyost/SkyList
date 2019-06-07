@@ -28,8 +28,8 @@
     <string name="settings_app_theme_title">Tema de la aplicación</string>
     <string name="settings_app_theme_summary">Este parámetro permite cambiar el tema de la aplicación.</string>
 
-    <string name="settings_app_notification_title">Recordatorio de tareas</string>
-    <string name="settings_app_notification_summary">Si tiene tareas a realizar, la aplicación enviará una notificación.</string>
+    <string name="settings_app_notificationMode_title">Recordatorio de tareas</string>
+    <string name="settings_app_notificationMode_summary">Si tiene tareas a realizar, la aplicación enviará una notificación.</string>
 
     <string name="settings_list_order_warning_title">Atención !</string>
     <string name="settings_list_order_warning_message">Tiene que reiniciar la aplicación para ver los cambios.</string>

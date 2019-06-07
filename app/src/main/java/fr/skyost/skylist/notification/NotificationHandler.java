@@ -11,12 +11,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 
+import androidx.annotation.RequiresApi;
+
 import org.joda.time.DateTime;
 
-import androidx.annotation.RequiresApi;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.settings.SettingsActivity;
 import fr.skyost.skylist.application.SkyListApplication;
+import fr.skyost.skylist.util.Utils;
 
 /**
  * This class allows to handle the notifications sent by the application.
@@ -91,6 +93,12 @@ public class NotificationHandler extends BroadcastReceiver {
 			return;
 		}
 
+		// We get the current notification mode.
+		String notificationMode = context.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getString("app_notificationMode", "0");
+		if(notificationMode == null) {
+			notificationMode = "0";
+		}
+
 		// We create both the Intent and the PendingIntent.
 		final Intent intent = new Intent(context, NotificationHandler.class);
 		intent.putExtra(INTENT_NOTIFICATION, true);
@@ -98,7 +106,12 @@ public class NotificationHandler extends BroadcastReceiver {
 
 		// And we schedule the PendingIntent at tomorrow midnight (+ 1 sec, "just to be sure").
 		final DateTime midnight = DateTime.now().withTimeAtStartOfDay().plusDays(1).plusSeconds(1);
-		manager.set(AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
+		if(notificationMode.equals("0")) {
+			Utils.alarmManagerSetExact(manager, AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
+		}
+		else if(notificationMode.equals("1")) {
+			manager.set(AlarmManager.RTC_WAKEUP, midnight.getMillis(), pending);
+		}
 	}
 
 	/**
@@ -110,7 +123,7 @@ public class NotificationHandler extends BroadcastReceiver {
 	 */
 
 	public static boolean areNotificationsEnabled(final Context context) {
-		return context.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getBoolean("app_notification", true);
+		return !context.getSharedPreferences(SettingsActivity.APP_PREFERENCES, Context.MODE_PRIVATE).getString("app_notificationMode", "0").equals("2");
 	}
 
 }

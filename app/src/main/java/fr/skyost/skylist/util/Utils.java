@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +23,24 @@ import fr.skyost.skylist.task.adapter.classifier.date.DateClassifier;
  */
 
 public class Utils {
+
+	/**
+	 * Calls 'manager.setExact' if possible.
+	 *
+	 * @param manager The alarm manager.
+	 * @param type The alarm type.
+	 * @param triggerAtMillis When to trigger.
+	 * @param operation The operation to execute.
+	 */
+
+	public static void alarmManagerSetExact(final AlarmManager manager, final int type, final long triggerAtMillis, final PendingIntent operation) {
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			manager.setExact(type, triggerAtMillis, operation);
+		}
+		else {
+			manager.set(type, triggerAtMillis, operation);
+		}
+	}
 
 	/**
 	 * Returns the closest element in the list using compareTo(...).
@@ -103,6 +122,8 @@ public class Utils {
 	 * Restarts the app.
 	 *
 	 * @param context The context.
+	 *
+	 * @return Whether it has been a success or not.
 	 */
 
 	public static boolean restart(final Context context) {

@@ -15,11 +15,13 @@
             android:defaultValue="0"
             app:iconSpaceReserved="false"/>
 
-        <CheckBoxPreference
-            android:key="app_notification"
-            android:summary="@string/settings_app_notification_summary"
-            android:title="@string/settings_app_notification_title"
-            android:defaultValue="true"
+        <ListPreference
+            android:key="app_notificationMode"
+            android:summary="@string/settings_app_notificationMode_summary"
+            android:title="@string/settings_app_notificationMode_title"
+            android:entries="@array/settings_notificationMode_entries"
+            android:entryValues="@array/settings_notificationMode_values"
+            android:defaultValue="0"
             app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>

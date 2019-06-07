@@ -6,12 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
+import androidx.core.app.NotificationCompat;
+
 import org.joda.time.LocalDate;
 
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicReference;
 
-import androidx.core.app.NotificationCompat;
 import fr.skyost.skylist.R;
 import fr.skyost.skylist.activity.MainActivity;
 import fr.skyost.skylist.task.TodoTask;
@@ -28,6 +29,12 @@ public class NotificationDisplayer extends AsyncTask<SkyListDatabase, Void, Coll
 	 */
 
 	private final AtomicReference<Context> context = new AtomicReference<>();
+
+	/**
+	 * Creates a new notification displayer instance.
+	 *
+	 * @param context The context.
+	 */
 
 	NotificationDisplayer(final Context context) {
 		this.context.set(context);
@@ -55,7 +62,7 @@ public class NotificationDisplayer extends AsyncTask<SkyListDatabase, Void, Coll
 		// We add the task to the notification.
 		final NotificationCompat.InboxStyle style = new NotificationCompat.InboxStyle();
 		for(final TodoTask task : tasks) {
-			style.addLine("- " + task.getDescription());
+			style.addLine("– " + task.getDescription());
 		}
 
 		// We then send the notification (and we schedule the next one)

@@ -40,4 +40,10 @@
         <item>Amarillo</item>
         <item>Verde</item>
     </string-array>
+
+    <string-array name="settings_notificationMode_entries">
+        <item>Preciso</item>
+        <item>Impreciso</item>
+        <item>Desactivado</item>
+    </string-array>
 </resources>
