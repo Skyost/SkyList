@@ -51,7 +51,7 @@ dependencies {
 
     implementation 'joda-time:joda-time:2.10.3'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
-    implementation 'com.github.jksiezni.permissive:permissive:0.2'
+    implementation 'com.github.jksiezni.permissive:permissive:0.3'
 }
 
 resourcePlaceholders {
