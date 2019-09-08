@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    def lifecycleVersion = '2.0.0'
+    def lifecycleVersion = '2.1.0'
     def roomVersion = '2.1.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
